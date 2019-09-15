@@ -31,7 +31,8 @@ img{
 }
 .btn-primary{
   background-color:#0c4175;
-	color: #fff;
+  color: #fff;
+  border-color: #0c4175;
 }
 .proHead{
   display:block;
@@ -115,4 +116,7 @@ img{
   display:block;
   padding-top:1em;
   padding-bottom:  2em;
+}
+.typeOfWork{
+  display:none;
 }
