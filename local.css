@@ -29,7 +29,10 @@ img{
 	background-color:#0c4175;
 	color: #fff;
 }
-
+.btn-primary{
+  background-color:#0c4175;
+	color: #fff;
+}
 .proHead{
   display:block;
   font-size:20px;
