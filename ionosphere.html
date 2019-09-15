@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Alex Averill</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="local.css">
+  </head>
+  <body>
+   
+        <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+                <a class="navbar-brand" href="index.html">Alex Averill</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+          
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                  <ul class="navbar-nav mr-auto">
+                
+                  </ul>
+                </div>
+              </nav>
+
+    <main role="main" class="container-fluid">
+
+      <div class="container-fluid">
+          <div class="article">
+        <h1>Ionosphere</h1>
+         <p class="card-text">Ionosphere is an interactive exhibit created out of a partnership between The Science and Engineering Education Center
+              and The William B. Hanson Center for Space Sciences at UT Dallas. Our goal was to introduce the effects the Ionosphere has on radio transmissions to elementary and middle school students.</p>
+         <h3>Build Process</h3>
+         <p>The design and build process of Ionosphere was a collaborative effort that reflected a teaching faculty member's reasearch on how the Ionoshere can affect radio wave transmission across the globe.
+             Our goal was to represent how radio waves are reflected off of the ionosphere to distant recieivers, and how changing conditions of the ionosphere due to weather or season can change how radio waves interact and reflect off of the ionosphere.</p>
+            <p>In order to represent radio waves, we decided to use lasers, and to represent the radio waves (lasers) bouncing off the ionosphere, the ionosphere became a single movable mirror.</p>
+             <hr>
+            <div class="row">
+                <div class="col">
+                    <img src="./images/iono/IMG_20170601_162727.jpg" h/>
+                </div>
+            <div class="col">
+                <span class="centText">The first steps were fairly straightforward. I had to build an exhibit box that would hold the exhibit. This first draft of the box had plexiglass slits that ran horizontally across the exhibit to allow for the mirrors. The mirror representeds different levels of the ionosphere to reflect our laser from the tranmitter to the receivers.
+                This was later changed to a single large mirror that moved vertically in order to better represent the ionosphere.</span>
+            </div>
+            </p>
+        </div>
+        <hr>
+        <div class="row">
+                <div class="col">
+                    <img src="./images/iono/IMG_20170604_120556.jpg" />
+                </div>
+                <div class="col">
+                        <span class="centText">Next, the base of the exhibit was built with routed channels to hide wires.</span>
+            </div>
+
+
+        </div>
+        <hr>
+            <div class="row">
+
+            <div class="col"><img src="./images/iono/IMG_20170604_122502.jpg" /></div>
+            <div class="col"><span class="centText"><p>Now it was time to prototype and test the radio recievers and electronics package. The "radio recievers" were created using 3D printing and were based off of an ionosphere reasearch antennea. The final version of the recievers were redesigned to look more like the standard dish antennea to help with public perception about what they were representing.<br> </p>
+            <p>The electonics started off as a Arduino Nano along with two photoresistors and two LEDs. It was then programmed so that when the photoresistors reached a certain point above ambient light, they would turn the LEDs on to simulate the radio waves being recieved by the station.</p>
+          </span></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col"> <img src="./images/iono/IMG_20170617_182245.jpg" /></div>
+            <div class="col">
+                <span class="centText"><p>Once the electronics were finished and tested, I added the laser button and laser 
+                    wheel to the front of the exhibit. The button, when pressed, turns the laser on for 45 seconds. Then,
+                    users can turn the wheel to change the direction of the laser and try to get the laser to bounce off of the
+                     mirror and hit a reciever.</p>
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col"> <img src="./images/iono/IMG_20170620_152509.jpg"/></div>
+            <div class="col">
+                    <span class="centText"><p>Another important part of this exhibit was the movable mirror that 
+                        represented the ionosphere. Here you can see a close up of the mirror, the velcro padding
+                         on the bottom (which is actually the top) is used as padding between the wooden portion of the 
+                         mirror and the plexi cover on the top of the exhibit.</p>
+                     </span>
+            </div>
+        </div>
+            <hr> 
+            <div class="row">
+            <div class="col"> <img src="./images/iono/IMG_20170617_192139.jpg"/></div>
+            <div class="col">
+                    <span class="centText">Next, we have the glue up stage of the exhibit. At this point, we 
+                        glued up the two back joints of the box with the front and bottom in as placeholders. The front of
+                         the exhibit is designed to be removable to allow for maintence and statistics capture. The button
+                          will log the time that it was pressed to help us determine exhibit usage.</p>
+            <br/><p> In this image the placement of the mirror is also visible, as well as the prototyped handle for moving the mirror. </p> </span>
+            </div>
+    </div>
+            <hr>
+            <div class="row">
+            <div class="col"> <img src="./images/iono/IMG_20170706_105101.jpg"/></div>
+            <div class="col">
+                    <span class="centText">Ionosphere is now fairly close to being finished. The vertical mirror movement is more easily seen, as well the new radio receivers. I will discuss the wiring mess in the Lessons Learned section.</p>
+                        </span>
+                    </div>
+                </div>
+            <hr>
+            <div class="row">
+            <div class="col"><img src="./images/iono/ionoMaster.jpg" /></div>
+            <div class="col">
+                    <span class="centText">Finally, after about two months, Ionosphere is ready to go, with statistics gathering! In its first three months out in the public, it was used around 1500 times.</p>
+            </span>
+        </div>
+    
+        </div>
+        <br>
+         <h3>Lessons Learned</h3>
+         <p> This project was a fun challenge that involved multiple departments and many many man hours. Overall, from inception to delivery, this project took almost 6 months. The majority of that time was spent ironing out the vision and requirements for the project as well as working through the the message we wanted to use. We also wanted to make it accessible to the population that we serve.</p> 
+             <p>From fabrication start to finish, it took about 3 months. There are always lessons learned when creating projects, and this was no exception.</p>
+             <p>One of the biggest lessons I learned from this project was related to the wiring and the microcontroller placement. As you can see above, the microcontroller and wiring were placed below the laser wheel in an attempt to keep the wiring hidden and out of sight. However, halfway through the project we decided to swap from the tiny Arduino Nano to a much larger TI Launchpad in order to stay standard across our other exhbits and their statistics gathering devices. </p>
+           <p>This change led to a much larger electronics package that ended up being much more visible then originally intended. Originally, the entire electronics package was going to fit below the bottom cover. Instead of leaving the electronics where they were, I would rather have placed them in the back corner of the exhibit in a black enclosure to hide them from view. Unfortunately, this exhibit was planned for deployment, and we had to instead simply cover the electronics in place with plastic sheets. Future repair or modification will include moving the electronics to a more discreet area in the exhibit.</p>
+         
+  </div>
+</div>
+    </main><!-- /.container -->
+    <div id="footer"></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
+

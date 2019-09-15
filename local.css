@@ -1,0 +1,115 @@
+body {
+  padding-top: 5rem;
+  /* background: rgb(33,122,162);
+  background: linear-gradient(0deg, rgba(33,122,162,1) 0%, rgba(19,75,100,1) 79%);
+  background-attachment: fixed; 
+  color:white; */
+  font-family: 'Lato', sans-serif;
+}
+
+h2{
+  text-align: center;
+}
+
+img{
+  width: 100%;
+}
+
+.lead{
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.bg-blue{
+	background-color:#0c4175;
+	color: #fff;
+}
+
+.proHead{
+  display:block;
+  font-size:20px;
+}
+.proBody{
+  display:block;
+}
+.cont{
+  display:block;
+}
+.proImg{
+  margin-left: 15%;
+  margin-bottom: 1%;
+}
+
+#project_list{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.project{
+  width: 90%;
+  margin: 5% auto;
+}
+
+.project-img-top{
+  width: 100%;
+  max-width: 500px;
+  max-height: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button{
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-title{
+  text-align: center;
+  padding: 5% 0 2% 0;
+}
+.centered{
+  margin:0 auto;
+  width: 32%;
+  border-radius:2%;
+  overflow:hidden;
+}
+.article{
+  padding: 1%;
+  font-size: 1.2em;
+  width: 75%;
+  margin:0 auto;
+}
+.center{
+  text-align: center;
+  width:40%;
+  margin:0 auto;
+}
+.article > h1{
+  text-align: center;
+}
+.article > h2{
+  text-align: center;
+}
+.article > h3{
+  text-align: center;
+}
+.footer{
+  padding: 2%;
+}
+.piTitle{
+
+  font-weight: bold;
+}
+.articleImage{
+  width: 80%;
+  margin:0 auto;
+  display:block;
+  padding-top:1em;
+  padding-bottom:  2em;
+}
