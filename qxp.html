@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="local.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+        <a class="navbar-brand" href="index.html">Alex Averill</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container-fluid">
+
+        <div class="container-fluid">
+            <div class="article">
+                <h1 id="xprize-exhibit">XPrize Exhibit</h1>
+                <hr>
+                <p> <img src="./images/qxp/xprize_hero.jpg"
+                        alt="XPrize Exhibit" class="articleImage" ></p>
+
+                <p>The Qualcomm Future of Medicine Table (It was called many things during development) was an exhbit
+                    that was developed at <a href="https://ideum.com/">Ideum</a> (<a
+                        href="https://ideum.com/portfolio/xprize-tricorder-museum-exhibit">Ideum Portfolio Piece</a>)in
+                    collaboration with the <a href="https://tricorder.xprize.org/prizes/tricorder">Qualcomm XPrize
+                        Foundation</a> to help expand the publics knowledge of the work of the Qualcomm XPrize
+                    foundation as well as their medical device challege that ended in 2017. This exhibit was deployed
+                    into four different science centers all across the United States. </p>
+                <p>This application consisted of three different programs that operated on the same table, embeded
+                    health sensors that communicated with the application, and finally a set of LEDs embeded in the
+                    table to provide a futuristic look. The application was developed in Unity, along with an Arduino
+                    that interfaced with the different health sensors. </p>
+                <p>This was an extremely fun and rewarding exhibit to work on and was deployed to five different science
+                    centers across the nation. </p>
+                <ul>
+                    <li><a href="https://lsc.org/">Liberty Science Center</a></li>
+                    <li><a href="https://www.thetech.org/">The Tech</a></li>
+                    <li><a href="https://www.rhfleet.org/">Fleet Science Center</a></li>
+                    <li><a href="https://www.pacificsciencecenter.org/">Pacific Science Center</a></li>
+                    <li><a href="https://omsi.edu/">Oregon Musuem of Science and Industry</a></li>
+                </ul>
+                <h2 id="sense-yourself">Sense Yourself</h2>
+                <p> <img src="./images/qxp/xprize_final_sensor_panel.jpg"
+                        alt="Sensor Panel"></p>
+                <p>My main focus for this exhibit was the Sense Yourself portion of the application. Sense Yourself
+                    consisted of three different health sensors that allowed a visitor to see live statistics about
+                    their current health.</p>
+                <p>The three finger activated sensors lived in a custom enclosure attached to an Ideum touch table. When
+                    a sensor was touched it would activate a differnt view focusing on that sensor in the Application.
+                </p>
+                <p><strong>Heart Rate Sensor</strong> </p>
+                <p>On the far left of the panel lived a heart rate sensor that would read and display the visitors
+                    current heart rate. This ended up being the most difficult of the three sensors to integrate. The
+                    main challenge was the tradeoff between speed and accuracy of the sensor, the longer a finger was
+                    placed on the sensor the more accurate and reliabe the output would be to the actual heartrate of a
+                    visitor. A truly accurate reading at a worst case could approach 20 seconds of read time, which for
+                    a musuem exhibit is a very long time. </p>
+                <p>In order to try to ensure accurate readings and avoid frustrated vistors a number of different things
+                    were implemented to this portion of the application. The first was a countdown to inform the visitor
+                    of the state of the scan so that they wouldn&#39;t assume it was broken. The second was a prompt to
+                    retry the scan if the readings at the end of the countdown were unreasonably high or low which would
+                    indicate a poor reading from the sensor.</p>
+                <p>Once a heart rate was read the application would prompt the user to do some form of exercise to see
+                    if they could increase their heart rate.</p>
+                <p><strong>Galvonic Skin Response (Stress)</strong> </p>
+                <p>The middle sensor was a galvonic skin response sensor, it measures the amount of moisture on the skin
+                    and uses that as a correlation to the amount of stress a visitor is experiancing. This sensor was
+                    extremely easy to integrate, and allowed us to graph the visitors stress level as indicated by the
+                    sensor. </p>
+                <p>Once a visitor places their finger onto this sensor the application would display a running line
+                    graph displaying the users current stress level as read by the Galvonic Skin response. It would then
+                    prompt the visitor to either attempt to calm down, or to do something embarressing to see how their
+                    stress level changed.</p>
+                <p><strong>Temperature Sensor</strong> </p>
+                <p>The rightmost sensor was a IR Temperature sensor meant to read and display the skin temperature of
+                    the visitor. This contactless temperature sensor was also extremely easy to integate into the
+                    aplication and provided a very accurate and repeatable skin temperature reading. </p>
+                <p>Once the skin temperature was displayed to the visitor it would prompt them to rub thier hands
+                    together to see if they could increase their temperature, as well as an explaination as to the
+                    reasons the temperature may not have been what they were expecting. This additional explaination was
+                    added after user testing where visitors were confused as to why the temperature they were seeing was
+                    not the usual 98.6 degrees</p>
+            </div>
+    </main><!-- /.container -->
+    <div id="footer"></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
