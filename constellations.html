@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="constellations.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="local.css">
+    <script type="text/javascript" src="constellations.js"></script>
+
+</head>
+
+<body onload="initialize(100,60,2,false)">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+        <a class="navbar-brand" href="index.html">Alex Averill</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container-fluid">
+
+        <div class="container-fluid">
+            <div class="article">
+
+                <h1>Constellations Animation</h1>
+                <canvas id="mainCanvas" width="1300%" ; height="600%"></canvas>
+                <p>The Constellations animation above was a fun re-introduction back into Javascript after spending a
+                    lot of time on the Desktop side of things.This type of animation seems to be appearing randomly
+                    around the web as a simple background animation that looks interesting without being distracting.
+                    Based on spending most of my recent time in C# and C++ I decided to give Typescript a try. I really
+                    enjoyed how quickly I was able to get it setup and running without having to deal with any headache,
+                    or incredibly long installation processes (looking at you QT).</p>
+                <p>Overall the entire animation is incredibly straightforward to program. It consists of a randomly
+                    moving set of points, and lines that connect each point based on the seperation distance between
+                    each point. Once the movement is implemented it is as simple and calculting the distance between
+                    points and drawing a line if it is less then the seperation distance. </p>
+                <p>After I had the initial animation funcitioning and looking nice, I started to play with making the
+                    entire thing somewhat reactive to the page size. It was an interesting challenge dealing with the
+                    number of possible ways to get the actual window width. As well as totally forgetting about reseting
+                    page margin and padding and getting frustrated with the 8 pixel border around my canvas. </p>
+                <p>Some potential future work:</p>
+                <ol>
+                    <li>Implement a gradient on each line based on length</li>
+                    <li>Combine the lines with my a boid implentation I did a while ago to just to see what happens</li>
+                </ol>
+                <p>In addition to the Javascript implementation above I also spend some time implementing the same type
+                    of animation as a way to get more familiar with Godot. <a
+                        href="https://github.com/alexaverill/ParticleFun">The Godot animation can be found on
+                        github</a>.</p>
+               
+            </div>
+    </main><!-- /.container -->
+    <div id="footer"></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

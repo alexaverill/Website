@@ -120,3 +120,7 @@ img{
 .typeOfWork{
   display:none;
 }
+canvas{
+  padding-top:1em;
+  padding-bottom:  2em;
+}
