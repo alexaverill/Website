@@ -51,7 +51,7 @@ var AnimatedPoint = /** @class */ (function () {
     return AnimatedPoint;
 }());
 var Rendering = /** @class */ (function () {
-    function Rendering(canvas, amount, seperation, radius, responsive) {
+    function Rendering(canvas, amount,seperation, radius, responsive) {
         this.colorString = 'rgb(200,0,0)';
         this.pointsList = [];
         this.canvas = canvas;
@@ -65,7 +65,7 @@ var Rendering = /** @class */ (function () {
         for (var x = 0; x < amount; x++) {
             var xPos = Math.random() * this.canvas.width + 8;
             var yPos = Math.random() * this.canvas.height + 8;
-            this.pointsList[x] = new AnimatedPoint(radius, radius, new Vector2(xPos, yPos), bounds);
+            this.pointsList[x] = new AnimatedPoint(3, 3, new Vector2(xPos, yPos), bounds);
         }
     }
     Rendering.prototype.getWidth = function () {
@@ -135,8 +135,8 @@ var Rendering = /** @class */ (function () {
     };
     return Rendering;
 }());
-function initialize(amount, seperation, radius, responsive) {
-    var render = new Rendering(document.getElementById("mainCanvas"), amount, seperation, radius, responsive);
+function initialize(amount,sep,radius,responsive) {
+    var render = new Rendering(document.getElementById("mainCanvas"),amount, sep, radius, responsive);
     window.onresize = function () { return render.handleSizeChanged(); };
     requestAnimationFrame(function () { return render.update(); });
 }
