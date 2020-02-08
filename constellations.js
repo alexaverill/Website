@@ -114,8 +114,8 @@ var Rendering = /** @class */ (function () {
     };
     return Rendering;
 }());
-function initialize(amount, seperation) {
-    var render = new Rendering(document.getElementById("mainCanvas"), .75, .4, amount, seperation);
+function initialize(amount, seperation, wScale,hScale) {
+    var render = new Rendering(document.getElementById("mainCanvas"), wScale, hScale, amount, seperation);
     window.onresize = function () { return render.handleSizeChanged(); };
     requestAnimationFrame(function () { return render.update(); });
 }

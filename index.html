@@ -17,7 +17,7 @@
 </head>
 
 <!-- <body onload="initialize(30,70,2,false)"> -->
-<body>
+<body onLoad="initialize(25, 50, .25,.25);">
   <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
     <a class="navbar-brand" href="index.html">Alex Averill</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -47,7 +47,16 @@
     <div id="project_list" class="container-fluid">
       <h2>Projects</h2>
       <div class="row">
-
+        <div class="summary col-md-4">
+          <div class="project">
+            <img class="project-img-top" src="./images/svggenerator/svg_Generator.png" alt="SVG Path Generator screenshot">
+            <div class="project-block">
+              <h4 class="project-title">SVG Path Generator</h4>
+              <p class="project-text">A simple tool to create bezier paths for the SVG element</p>
+              <div class="button"><a href="/svggenerator.html" class="btn btn-primary">Read More!</a></div>
+            </div>
+          </div>
+        </div>
         <div class="summary col-md-4">
           <div class="project">
             <img class="project-img-top" src="./images/michigan/michigan1.jpg" alt="Michigan Naturalist Table">
@@ -71,6 +80,16 @@
         </div>
         <div class="summary col-md-4">
           <div class="project">
+            <img class="project-img-top" src="./images/JumpIn/BothScreens.png" alt="Jump In Exhibit">
+            <div class="project-block">
+              <h4 class="project-title">Jump In!</h4>
+              <p class="project-text">Unlock the joy of jumping in this interactive childrens museum exhibit.</p>
+              <div class="button"><a href="jumpin.html" class="btn btn-primary">Read More!</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="summary col-md-4">
+          <div class="project">
             <img class="project-img-top" src="./images/qxp/xprize_hero.jpg" alt="QXP Exhibit">
             <div class="project-block">
               <h4 class="project-title">Qualcomm XPrize Exhibit</h4>
@@ -79,16 +98,16 @@
             </div>
           </div>
         </div>
-        <!-- <div class="summary col-md-4">
-          <div class="project">
-            <canvas id="mainCanvas" width="500%" ; height="290%"></canvas>
+        <div class="summary col-md-4">
+          <div class="project" >
+            <canvas id="mainCanvas" width="100%" height="100%"></canvas>
             <div class="project-block">
               <h4 class="project-title">Constellations Animation</h4>
-              <p class="project-text">A simple, fun and elegant Canvas animation in Typescript/Javascript</p>
+              <p class="project-text">A fun canvas animation in Typescript!</p>
               <div class="button"><a href="constellations.html" class="btn btn-primary">Read More!</a></div>
             </div>
           </div>
-        </div> -->
+        </div>
         <div class="summary col-md-4">
           <div class="project">
             <img class="project-img-top" src="./images/donorwall/DonorWall.jpg" alt="Donor Wall">
