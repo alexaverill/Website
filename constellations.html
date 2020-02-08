@@ -39,20 +39,11 @@
 
                 <h1>Constellations Animation</h1>
                 <canvas id="mainCanvas"></canvas>
-                <p>The Constellations animation above was a fun re-introduction back into Javascript after spending a
-                    lot of time on the Desktop side of things.This type of animation seems to be appearing randomly
-                    around the web as a simple background animation that looks interesting without being distracting.
-                    Based on spending most of my recent time in C# and C++ I decided to give Typescript a try. I really
-                    enjoyed how quickly I was able to get it setup and running without having to deal with any headache,
-                    or incredibly long installation processes (looking at you QT).</p>
-                <p>Overall the entire animation is incredibly straightforward to program. It consists of a randomly
-                    moving set of points, and lines that connect each point based on the seperation distance between
-                    each point. Once the movement is implemented it is as simple and calculting the distance between
-                    points and drawing a line if it is less then the seperation distance. </p>
-                <p>After I had the initial animation funcitioning and looking nice, I started to play with making the
-                    entire thing somewhat reactive to the page size. It was an interesting challenge dealing with the
-                    number of possible ways to get the actual window width. As well as totally forgetting about reseting
-                    page margin and padding and getting frustrated with the 8 pixel border around my canvas. </p>
+                <p>The Constellations animation above was a fun weekend project to get my feet wet with Javascript and web programming after 
+                    spending most of my days working in Unity or QT/C++. 
+                     I ended up using Typescript and the Canvas element to re-create a common animation seen around the web. Typescript made the transition from C++/C# much smoother then jumping straight back into Javascript </p>
+                <p>This animation consists of a set of randomly moving points, and a known max seperation distance for when to render the lines. I did have some trouble getting the canvas to play nice with resizing screens and being responsive. </p>
+                
                 <p>Some potential future work:</p>
                 <ol>
                     <li>Implement a gradient on each line based on length</li>
