@@ -51,19 +51,21 @@ var AnimatedPoint = /** @class */ (function () {
     return AnimatedPoint;
 }());
 var Rendering = /** @class */ (function () {
-    function Rendering(canvas, amount,seperation, radius, responsive) {
+    function Rendering(canvas, wScale, hScale, amount, seperation) {
         this.colorString = 'rgb(200,0,0)';
         this.pointsList = [];
+        this.seperationDistance = 50;
+        this.widthScale = 1;
+        this.heightScale = 1;
+        this.widthScale = wScale;
+        this.heightScale = hScale;
         this.canvas = canvas;
-        canvas.width = innerWidth * .75;
-        canvas.height = innerWidth * .25;
         this.canvas.width = this.getWidth();
         this.canvas.height = this.getHeight();
         this.context = canvas.getContext('2d');
         this.context.fillRect(0, 0, 800, 800);
-        var bounds = new Vector2(this.canvas.width, this.canvas.height);
         this.seperationDistance = seperation;
-        this.isResponsive = responsive;
+        var bounds = new Vector2(this.canvas.width, this.canvas.height);
         for (var x = 0; x < amount; x++) {
             var xPos = Math.random() * this.canvas.width + 8;
             var yPos = Math.random() * this.canvas.height + 8;
@@ -71,35 +73,10 @@ var Rendering = /** @class */ (function () {
         }
     }
     Rendering.prototype.getWidth = function () {
-        if (this.isResponsive) {
-            return window.innerWidth;
-        }
-        else {
-            return this.canvas.width;
-        }
-        //document.body.clientWidth;
-        // return Math.max(
-        //   document.body.scrollWidth,
-        //   document.documentElement.scrollWidth,
-        //   document.body.offsetWidth,
-        //   document.documentElement.offsetWidth,
-        //   document.documentElement.clientWidth
-        // );
+        return window.innerWidth * this.widthScale;
     };
     Rendering.prototype.getHeight = function () {
-        if (this.isResponsive) {
-            return window.innerHeight;
-        }
-        else {
-            return this.canvas.height;
-        }
-        // return Math.max(
-        //   document.body.scrollHeight,
-        //   document.documentElement.scrollHeight,
-        //   document.body.offsetHeight,
-        //   document.documentElement.offsetHeight,
-        //   document.documentElement.clientHeight
-        // );
+        return window.innerHeight * this.heightScale;
     };
     Rendering.prototype.setBackgroundColor = function (color) {
         this.context.fillStyle = color;
@@ -137,8 +114,8 @@ var Rendering = /** @class */ (function () {
     };
     return Rendering;
 }());
-function initialize(amount,sep,radius,responsive) {
-    var render = new Rendering(document.getElementById("mainCanvas"),amount, sep, radius, responsive);
+function initialize(amount, seperation) {
+    var render = new Rendering(document.getElementById("mainCanvas"), .75, .4, amount, seperation);
     window.onresize = function () { return render.handleSizeChanged(); };
     requestAnimationFrame(function () { return render.update(); });
 }
