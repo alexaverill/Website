@@ -136,6 +136,25 @@ canvas{
   min-height:350px;
   justify-content: center;
 }
+.non-centered{
+  text-align: left;
+}
+.non-centered > h1,h2,h3,h4,h5{
+  text-align: left !important;
+}
+.qmlSubTitle{
+  margin-top:5%;
+}
+.smallImage{
+  height: 400px;
+  width: auto;
+}
+.qmlLinkTitle{
+  margin-top:2%;
+}
+.small-breadcrumb{
+  margin-bottom: 1%;
+}
 /* #mainCanvas{
   width: 100%;
 } */
