@@ -99,13 +99,13 @@ QUICK_TEST_MAIN(example)
                             </code>
                         </pre>
 
-                        <p>If you are setting up the Relative Path for your main application make sure to remember that
-                            the path is starting from where the TestRunner Executable is being built, not were the
+                        <p>If you are using a relative path to define the <code>QUICK_TEST_SOURCE_DIR</code> make sure to remember that
+                            the path is starting from where the TestRunner Executable is being built and run, not were the
                             source code is stored. </p>
                     </li>
                     <li>
                         <p>Now in the main application add a QML file named tst_test.qml. This will allow for our test
-                            runner to find this empty test file and it will not output anything. </p>
+                            runner to find this empty test file. </p>
                     </li>
                 </ol>
             </div>
