@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="../local.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+        <a class="navbar-brand" href="../index.html">Alex Averill</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container-fluid">
+
+        <div class="container-fluid">
+            
+            <div class="article non-centered">
+                <div class="small-breadcrumb">
+                    <a href="./index.html" >&lt; QML Testing</a>
+                </div>
+                <h1 class="qmltTitle">Setting up a Testable QML Project</h1>
+                <p>Setting up a QT Project that makes it easy to use QML TestCase is a bit different from just using a
+                    normal QML Project and then adding tests.
+                    QML TestCase requires a TestRunner defined in C++ that will run all of the QML tests.
+                    This TestRunner also must be the entry point of its project which can cause issues if you want to
+                    manually test your Components, or just want to keep your testing seperated out from your main
+                    application logic. </p>
+                <p>I have found that an easy solution is to use the QT Subdirs Project and defining an application
+                    project, and a Test Runner Project. </p>
+                <h3 class="qmlSubTitle">Setting Up a SubDirs Project.</h3>
+                <ol class="instructions">
+                    <li>In QT Creator create a new project</li>
+                    <li>Under Other Projects select SubDirs Project</li>
+                    <img src="Images/1_subdirs_project.png" class="articleImage smallImage"
+                        alt="SubDir Project menu in QTCreator" />
+                    <li>Define your Project Name</li>
+                    <li>Define the Kits that you wish to use.</li>
+                    <li>After you finish setting up the main SubDirs project it will prompt you to add a sub-project.
+                        Select yes. This will be the main application. </li>
+                    <li>Define the main applications project name. </li>
+                    <li>Define the kits.</li>
+                    <li>Once you have finished you will now see the application as a subproject. </li>
+                    <li>Now we can add in the Test Runner project. </li>
+                    <li>Right click on the parent Project and select Add New Subproject. </li>
+                    <li>Next I usually select another QML Quick application as the project type. Selecting the QML Quick
+                        Application will create a .pro file with all of our main requirements. It does however also
+                        include some extra files that aren't nessiary </li>
+                    <li>Continue through the rest of our dialogs to finish creating our test runner project. </li>
+                </ol>
+                <p>You should now have two projects visible in QT Creator, and we can now make our TestRunner
+                    project to actually run tests. </p>
+
+                <h3 class="qmlSubTitle">Setting Up TestRunner Project</h3>
+                <ol>
+                    <li>First we need to add qmltestcase into the .pro file under our TestRunner Project</li>
+                    <pre><code>CONFIG += c++11 qmltestcase</code>
+                    </pre>
+                    <li>
+                        <p>Next edit the main.cpp to contain: </p>
+                        <pre><code>#include &lt;QtQuickTest&gt;
+QUICK_TEST_MAIN(example)
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        <p>From here you should be able to right click on the Test Runner Project and run it. The
+                            application output should be similar to:</p>
+                        <pre><code>The directory '/.../ToDo_TestRunner' does not contain any test files matching 'tst_*.qml'
+                            </code>
+                        </pre>
+                        <p>The TestRunner is going to search its directory for any tst_*.qml files and then run the
+                            TestCase Components in those files. </p>
+                    </li>
+                    <li>
+                        <p>Since we are using two seperate subprojects we will need to tell the TestRunner where to look
+                            for the tst_*.qml files. </p>
+                        <pre><code>#include &lt;QtQuickTest&gt;
+#define QUICK_TEST_SOURCE_DIR "../../QMLTesting/ToDo/" 
+QUICK_TEST_MAIN(example)
+                            </code>
+                        </pre>
+
+                        <p>If you are setting up the Relative Path for your main application make sure to remember that
+                            the path is starting from where the TestRunner Executable is being built, not were the
+                            source code is stored. </p>
+                    </li>
+                    <li>
+                        <p>Now in the main application add a QML file named tst_test.qml. This will allow for our test
+                            runner to find this empty test file and it will not output anything. </p>
+                    </li>
+                </ol>
+            </div>
+    </main><!-- /.container -->
+    <div id="footer"></div>
+</body>
+
+</html>
