@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="../local.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+        <a class="navbar-brand" href="../index.html">Alex Averill</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container-fluid">
+
+        <div class="container-fluid">
+
+            <div class="article non-centered">
+                <div class="small-breadcrumb">
+                    <a href="./index.html">&lt; QML Testing</a>
+                </div>
+                
+                <h1>A Simple Test</h2>
+                <p>This simple example will go over how to use the QML TestCase component, as well as some of the built in comparison operations.</p>
+                <p>We will be building out a very simple Background component and then writing a test to ensure that its color is what we expect it to be. </p>
+                <p>First define a <strong>Background.qml</strong> using a Rectangle with its color set to black.</p>
+<pre><code>import QtQuick 2.0
+Rectangle{
+    id:background
+    color:"black"
+}
+</code>
+</pre>
+<p>Next we can create our first TestCase. TestCase components should always reside in a <code>tst_</code> prefixed QML file so it can be located by the TestRunner. Define a <strong>tst_background.qml</strong>, and add the following code:</p>
+<pre><code>import QtQuick 2.0
+import QtTest 1.2
+TestCase{
+    id:backgroundTests
+    name:"TestBackground"
+}
+</code>
+</pre>
+<p> In order to test a component is needs to be instantiated, either statically or dynamically. For now we are going to add a Background Component to our TestCase:</p>
+<pre><code>import QtQuick 2.0
+    import QtTest 1.2
+    TestCase{
+        id:backgroundTests
+        name:"TestBackground"
+        Background{
+            id:bg
+        }
+    }
+</code>
+</pre>
+<p>Next we can define our first test function that we will use to compare our Background component's color to see if it is what is expected. </p>
+
+    <p><a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html">QML TestCase</a> includes a few different comparion operations such as <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#compare-method">compare</a>,<a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#tryCompare-method">tryCompare</a>, and <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#fuzzyCompare-method">fuzzyCompare</a>. Each has its place, but for now compare will work perfectly.</p>
+    <p> In this test we need to use <code>compare(actual,expected)</code> to determine if the background color is what it should be.</p>
+    <p>It is good to know that we cannot compare string colors to string colors using compare. 
+        If you did <code>compare(bg.color,"red")</code> it would always fail due to it trying to compare the <code>bg.color</code> as a hex color<code>#0000FF</code> 
+        to the string <code>red</code>. To solve this we can create a color property that holds our expected color of red, which will convert it to a hex color.</p>
+    <p>All of our test functions must have a <code>test_</code> prefix. So we can now define <code>function test_color()</code> and have it compare our expected color property to the Background components color.</p>
+<pre><code>import QtQuick 2.0
+    import QtTest 1.2
+    TestCase{
+        id:backgroundTests
+        name:"TestBackground"
+        when:windowShown
+        Background{
+            id:bg
+        }
+        property color expectedBG:"red"
+        function test_color(){
+            compare(bg.color,expectedBG);
+        }
+    }
+</code>
+</pre>
+<p>Now this test is ready to run, and should return a <code>FAIL!</code> since our Background components color is black, and we expect it to be red</p>
+<p>The Final step would be to modify the Background component to be using the correct color value as its background. Then run our tests again.</p>
+<p>Other tests that we could write for this component would be to ensure its <code>height</code> or <code>width</code> are as expected, or that it is in the correct position.</p>
+<h3 class="qmlSubTitle">Additional Information:</H3>
+<p>An important property of the TestCase component is the <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#when-prop">when</a> property that allows you to control when the test will start. A common usage is to bind the <strong>when</strong> property to the TestCases <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#windowShown-prop">windowShown</a> property to ensure the component you are testing is acting like it is part of a visible window.</a> While this is not going to make a difference in this simple example it will come in handy once you are emulating mouse or touch events.</p>
+<pre><code>import QtQuick 2.0
+    import QtTest 1.2
+    TestCase{
+        id:backgroundTests
+        when:windowShown
+        name:"TestBackground"
+        Background{
+            id:bg
+        }
+    }
+</code>
+</pre>
+</div>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+
+</html>
