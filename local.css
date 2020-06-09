@@ -133,7 +133,7 @@ canvas{
   align-items: center;
 }
 .image-container{
-  min-height:350px;
+  min-height:300px;
   justify-content: center;
 }
 .non-centered{
@@ -154,6 +154,21 @@ canvas{
 }
 .small-breadcrumb{
   margin-bottom: 1%;
+}
+.custom-card{
+  margin-top:3%;
+}
+.row{
+  margin-bottom:10%;
+}
+@media(max-width:500px){
+  .lead{
+    width:100%;
+  }
+  .image-container {
+    min-height: 200px;
+    justify-content: center;
+  }
 }
 /* #mainCanvas{
   width: 100%;
