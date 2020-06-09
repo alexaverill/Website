@@ -60,8 +60,9 @@ var Rendering = /** @class */ (function () {
         this.widthScale = wScale;
         this.heightScale = hScale;
         this.canvas = canvas;
-        this.canvas.width = this.getWidth();
-        this.canvas.height = this.getHeight();
+        this.setSize();
+        // this.canvas.width = this.getWidth();
+        // this.canvas.height = this.getHeight();
         this.context = canvas.getContext('2d');
         this.context.fillRect(0, 0, 800, 800);
         this.seperationDistance = seperation;
@@ -72,10 +73,23 @@ var Rendering = /** @class */ (function () {
             this.pointsList[x] = new AnimatedPoint(3, 3, new Vector2(xPos, yPos), bounds);
         }
     }
+    Rendering.prototype.setSize = function () {
+        this.canvas.style.width = '100%';
+        this.canvas.style.height = '90%';
+        this.canvas.width = this.canvas.offsetWidth;
+        this.canvas.height = this.canvas.offsetHeight;
+    };
     Rendering.prototype.getWidth = function () {
+        if(window.innerWidth < 500){
+            return window.innerWidth * .68;
+        }
         return window.innerWidth * this.widthScale;
     };
     Rendering.prototype.getHeight = function () {
+        
+        if(window.innerWidth < 500){
+            return window.innerHeight * .25 ;
+        }
         return window.innerHeight * this.heightScale;
     };
     Rendering.prototype.setBackgroundColor = function (color) {
@@ -83,8 +97,7 @@ var Rendering = /** @class */ (function () {
         this.context.fillRect(0, 0, 800, 800);
     };
     Rendering.prototype.handleSizeChanged = function () {
-        this.canvas.height = this.getHeight();
-        this.canvas.width = this.getWidth();
+        tthis.setSize();
         var newSize = new Vector2(this.canvas.width, this.canvas.height);
         for (var x = 0; x < this.pointsList.length; x++) {
             this.pointsList[x].setBounds(newSize);

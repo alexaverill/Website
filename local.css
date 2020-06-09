@@ -57,6 +57,7 @@ img{
 .project{
   width: 90%;
   margin: 5% auto;
+  min-height: 47vh;
 }
 
 .project-img-top{
@@ -76,6 +77,31 @@ img{
 .project-title{
   text-align: center;
   padding: 5% 0 2% 0;
+  color:black
+  text-decoration: none;
+}
+.project-title:hover,.project-text:hover{
+  text-decoration: none;
+}
+.project-text{
+  color:black;
+  text-decoration: none;
+}
+.project:hover, .card:hover {
+ 
+  text-decoration:none;   
+}
+.card{
+  transition: all .2s ease-in-out;
+}
+.card:hover{
+  -webkit-box-shadow: 4px 1px 4px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 4px 1px 4px 0px rgba(0,0,0,0.25);
+  box-shadow: 4px 1px 4px 0px rgba(0,0,0,0.25);
+  transform: scale(1.1);
+}
+a.custom-card{
+  text-decoration: none;
 }
 .centered{
   margin:0 auto;
@@ -133,7 +159,7 @@ canvas{
   align-items: center;
 }
 .image-container{
-  min-height:350px;
+  min-height:300px;
   justify-content: center;
 }
 .non-centered{
@@ -154,6 +180,21 @@ canvas{
 }
 .small-breadcrumb{
   margin-bottom: 1%;
+}
+.custom-card{
+  margin-top:3%;
+}
+.row{
+  margin-bottom:10%;
+}
+@media(max-width:500px){
+  .lead{
+    width:100%;
+  }
+  .image-container {
+    min-height: 200px;
+    justify-content: center;
+  }
 }
 /* #mainCanvas{
   width: 100%;
