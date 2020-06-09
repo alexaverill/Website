@@ -75,7 +75,7 @@ var Rendering = /** @class */ (function () {
     }
     Rendering.prototype.setSize = function () {
         this.canvas.style.width = '100%';
-        this.canvas.style.height = '100%';
+        this.canvas.style.height = '90%';
         this.canvas.width = this.canvas.offsetWidth;
         this.canvas.height = this.canvas.offsetHeight;
     };
