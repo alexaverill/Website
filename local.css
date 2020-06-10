@@ -73,7 +73,9 @@ img{
   margin: 0 auto;
   text-align: center;
 }
-
+.project-block{
+  margin-top:10%;
+}
 .project-title{
   text-align: center;
   padding: 5% 0 2% 0;
@@ -158,9 +160,18 @@ canvas{
   margin-left: 25%;
   align-items: center;
 }
+
 .image-container{
-  min-height:300px;
+  height:220px;
   justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    /* max-width: 500px; */
+    /* max-height: 350px; */
+    margin: 0 auto;
+    text-align: center;
+    margin: auto;
+  
 }
 .non-centered{
   text-align: left;
