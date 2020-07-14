@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="../local.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+        <a class="navbar-brand" href="../index.html">Alex Averill</a>
+    </nav>
+
+    <main role="main" class="container-fluid">
+
+        <div class="container-fluid">
+
+            <div class="article non-centered">
+                <div class="small-breadcrumb">
+                    <a href="./index.html">&lt; QML Testing</a>
+                </div>
+                
+                <h2>Accessing Components Children.</h2>
+               While Unit Tests can be extremely helpful, In terms of the QML testing I have done testing individual QML components is pretty much a wasted effort. I have yet to run into a bug in the built in QML components (I may eventually, and will update this page when it happens).
+               Most of the testing I tend towards is combinations of multiple built in QML components to create a more complex custom component. Once a component is created that has a few sub components it can be helpful to use <code>findChild()</code> to access children elements from your base component.
+               <code>findChild()</code> does exactly what you expect and will search a component for a child based on an ObjectName that the programmer defines. ObjectNames can be assigned to any QML component in a similar way to any other properties, and are always a string value.
+               
+               <h3 class="qmlSubTitle"> Example:</h3>
+               <h4>Component Code:</h4>
+<pre><code>import QtQuick 2.0
+Rectangle{
+    id:background
+    objectName:"background"
+    color:"black"
+    MouseArea{
+        id:clickable
+        objectName:"clickable"
+        anchors.left:parent.left
+        anchors.top:parent.top
+        width:500
+        height:500
+        Rectangle{
+            id:clickRepresentation
+            objectName:"clickRep"
+            anchors.fill:parent
+            color:clickable.pressed?"green":"yellow"
+        }
+    }
+}
+</code>
+</pre>
+<h4>Test Code</h4>
+<pre><code>import QtQuick 2.0
+    import QtTest 1.2
+    TestCase{
+        id:backgroundTests
+        name:"TestBackground"
+        when:windowShown
+        Background{
+            id:bg
+        }
+        property color expectedBG:"yellow"
+        function test__non_clicked_color(){
+            let clickRep = findChild(bg,"clickRep");
+
+            compare(clickRep.color,expectedBG);
+        }
+    }
+</code>
+</pre>
+</div>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>>A Simple Test<
+
+</html>

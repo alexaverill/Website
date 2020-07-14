@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="../local.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+        <a class="navbar-brand" href="../index.html">Alex Averill</a>
+    </nav>
+
+    <main role="main" class="container-fluid">
+
+        <div class="container-fluid">
+
+            <div class="article non-centered">
+                <div class="small-breadcrumb">
+                    <a href="./index.html">&lt; QML Testing</a>
+                </div>
+                
+                <h2>Simulating Mouse and Touch Events.</h2>
+               Simulating Mouse and Touch events is likely one of the most useful tools that is offered by QML TestCase, and allows for a developer to create more complex integration tests.
+               In this article we are going to skip over keyboard testing since at the moment most of my projects are completely touch based, but hopefully eventually I will circle back and work through that.
+               There are a couple of big gotchas for both Mouse and Touch Input that are not immediately obvious:
+               <ol>
+                   <li>
+                    In order to simulate either mouse or touch your test case MUST be inside of a component that has a defined size. If your root 
+                    component does not have a defined size it will not be able to accept mouse or touch input. 
+                   </li>
+                   <li>
+                       If you start a Press event (touch.press, or mousePress) ensure that it gets released by the end of your testFunction, or in your cleanup. Otherwise you will get angry error messages
+                   </li>
+                   <li>
+                       You must wait until your window is shown to start your tests.
+                   </li>
+
+                </ol> 
+                <h3 class="qmlSubTitle"> Touch Events</h3>
+                <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#touchEvent-method">Touch events</a> start by defining a TouchEvent on a component.
+                Once a touchEvent has been initialized it can be passed a <a href="https://doc.qt.io/qt-5/qml-qttest-toucheventsequence.html#press-method">touch action</a> such as press, move, or release. After each event <code>commit()</code> must be called for the action to be
+                passed to the component. 
+<pre>
+    <code>let touch = touchEvent(component);
+        touch.press(0,component);
+        touch.commit();
+        touch.release(0);
+        touch.commit();
+
+    </code>
+</pre>
+        Touch Events are also able to be chained, and as long as each action is followed by a <code>commit()</code> you can create complex flow. By default a touch action will take place 
+        in the center of the component that a Touch Event is tied to. This can be controlled with optional arguements that define the x and y position of the touch.
+
+        <h4>Multitouch</h4>
+        Touch Events also support multitouch emulation. The first arguement in any touch action is the ID of the touch that you want to manipulate. 
+        <pre>
+            <code>let touch = touchEvent(component);
+                touch.press(0,component);
+                touch.press(1,component,1,1);//press(ID,component,x,y);
+                touch.press(3,component,10,40);
+                touch.commit();
+                //test behavior on three touches
+                touch.release(0);
+                touch.release(1);
+                touch.release(2);
+                touch.commit();
+        
+            </code>
+        </pre>
+<h3 class="qmlSubTitle">Mouse Events</h3>
+Unlike Touch Events, Mouse Events do not require defining anything. A mouse event can be pointed towards any QML component. 
+The simpiliest possible Mouse Event is a <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#mouseClick-method">mouseClick</a>
+<pre>
+    <code>
+        mouseClick(component);
+    </code>
+</pre>
+By default this will click on the component at its center, with the left mouse button. It has additional optional arguements to control x,y, button, modifies, and delays. In addition to mouseClick there is also mousePress, mouseRelease, mouseDrag, and mouseMove, and a couple others.
+I am going to focus mainly on mouseClick to keep things simple, with the rest following a similar enough pattern.
+
+
+<h3 class="qmlSubTitle"> Example Tests:</h3>
+These two test sets show implementation of a touch test and a mouse test that test the pressed state, as well as a press and drag off of a touch and mouse.
+
+               <h4>Component Code:</h4>
+<pre><code>import QtQuick 2.0
+    import QtTest 1.2
+Rectangle{
+    width:800
+    height:800
+    Background{
+        id:bg
+        anchors.fill: parent
+    }
+    TestCase{
+        id:backgroundTests
+        anchors.fill: parent
+        name:"TestBackground"
+        when:windowShown
+
+        property color expectedBG:"green"
+        function test_touched_background(){
+            let clickRep = findChild(bg,"clickRep");
+            let mouseArea = findChild(bg,"clickable")
+            let touch = touchEvent(mouseArea);
+            touch.press(0,mouseArea)
+            touch.commit();
+            compare(clickRep.color,backgroundTests.expectedBG);
+            touch.release(0);
+            touch.commit();
+        }
+    }
+    TestCase{
+        id:backgroundDragTest
+        when:windowShown
+    property color expectedBG:"yellow"
+    function test_touch_release(){
+        let clickRep = findChild(bg,"clickRep");
+        let mouseArea = findChild(bg,"clickable")
+        let touch = touchEvent(mouseArea);
+        touch.press(0,mouseArea)
+        touch.commit();
+        touch.release(0);
+        touch.commit();
+        compare(clickRep.color,backgroundDragTest.expectedBG);
+    }
+    }
+}
+</code>
+</pre>
+<i> Note: It could be better to organize this into seperate test files for each test case.It mostly depends on personal prefernce in my opinion.</i>
+<h4>Mouse Test Code</h4>
+<pre><code>
+    import QtQuick 2.0
+    import QtTest 1.2
+Rectangle{
+    width:800
+    height:800
+    Background{
+        id:bg
+        anchors.fill: parent
+    }
+    TestCase{
+        id:backgroundTests
+        anchors.fill: parent
+        name:"TestBackground"
+        when:windowShown
+
+        property color expectedBG:"yellow"
+        function test_clicked_background(){
+            let clickRep = findChild(bg,"clickRep");
+            let mouseArea = findChild(bg,"clickable")
+            mouseClick(mouseArea)
+            compare(clickRep.color,backgroundTests.expectedBG);
+        }
+    }
+    TestCase{
+        id:backgroundDragTest
+        when:windowShown
+    property color expectedBG:"green"
+    function test_mouse_press(){
+        let clickRep = findChild(bg,"clickRep");
+        let mouseArea = findChild(bg,"clickable")
+        mousePress(mouseArea);
+        compare(clickRep.color,backgroundDragTest.expectedBG);
+        mouseRelease(mouseArea);
+    }
+    }
+}
+
+</code>
+</pre>
+
+<h3 class="qmlSubTitle" id="signalSpy"> Additional Notes: Signal Spy</h3>
+In additional to simply tying into components properties, or properties of children it is also possible (and potentially more useful) to tie into and listen for signals that your component emits
+based on actions. For example if you have a component that emits a clicked signal based on its internal state it would be possible to use a <a href=="">Signal Spy</a> to listen for that signal as part of your tests.
+
+<pre>
+    <code>
+    Rectangle{
+            width:800;
+            height:800;
+        //Component that emits a signal
+        CustomComponent{
+            id:custom
+            anchors.fill:parent;
+            //signal customClicked();
+        }
+        SignalSpy{
+            id:spyder
+            target:custom
+            signalName:"customClick"
+        }
+        TestCase{
+            name:"testing";
+            function test_signal(){
+                compare(syder.count,0)
+                let touch = touchEvent(custom);
+                touch.press(0,custom);
+                touch.commit();
+                compare(spyder.count,1);
+
+            }
+        }
+    }
+    </code>
+</pre>
+</div>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>>A Simple Test<
+
+</html>

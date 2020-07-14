@@ -87,7 +87,7 @@ TestCase{
 <p>Now this test is ready to run, and should return a <code>FAIL!</code> since our Background components color is black, and we expect it to be red</p>
 <p>The Final step would be to modify the Background component to be using the correct color value as its background. Then run our tests again.</p>
 <p>Other tests that we could write for this component would be to ensure its <code>height</code> or <code>width</code> are as expected, or that it is in the correct position.</p>
-<h3 class="qmlSubTitle">Additional Information:</H3>
+<h3 id="windowShown" class="qmlSubTitle">Additional Notes: windowShown</H3>
 <p>An important property of the TestCase component is the <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#when-prop">when</a> property that allows you to control when the test will start. A common usage is to bind the <strong>when</strong> property to the TestCases <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#windowShown-prop">windowShown</a> property to ensure the component you are testing is acting like it is part of a visible window.</a> While this is not going to make a difference in this simple example it will come in handy once you are emulating mouse or touch events.</p>
 <pre><code>import QtQuick 2.0
     import QtTest 1.2
