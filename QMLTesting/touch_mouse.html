@@ -29,8 +29,9 @@
                 </div>
                 
                 <h2>Simulating Mouse and Touch Events.</h2>
-               Simulating Mouse and Touch events is likely one of the most useful tools that is offered by QML TestCase, and allows for a developer to create more complex integration tests.
-               In this article we are going to skip over keyboard testing since at the moment most of my projects are completely touch based, but hopefully eventually I will circle back and work through that.
+                <p>
+               Simulating Mouse and Touch events is likely one of the most useful tools that is offered by QML TestCase, and allows for more complex tests.</p>
+               <p>
                There are a couple of big gotchas for both Mouse and Touch Input that are not immediately obvious:
                <ol>
                    <li>
@@ -45,8 +46,9 @@
                    </li>
 
                 </ol> 
+                </p>
                 <h3 class="qmlSubTitle"> Touch Events</h3>
-                <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#touchEvent-method">Touch events</a> start by defining a TouchEvent on a component.
+                <p><a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#touchEvent-method">Touch events</a> start by defining a TouchEvent on a component.
                 Once a touchEvent has been initialized it can be passed a <a href="https://doc.qt.io/qt-5/qml-qttest-toucheventsequence.html#press-method">touch action</a> such as press, move, or release. After each event <code>commit()</code> must be called for the action to be
                 passed to the component. 
 <pre>
@@ -58,11 +60,15 @@
 
     </code>
 </pre>
+</p>
+<p>
         Touch Events are also able to be chained, and as long as each action is followed by a <code>commit()</code> you can create complex flow. By default a touch action will take place 
         in the center of the component that a Touch Event is tied to. This can be controlled with optional arguements that define the x and y position of the touch.
-
+</p>
         <h4>Multitouch</h4>
+        <p>
         Touch Events also support multitouch emulation. The first arguement in any touch action is the ID of the touch that you want to manipulate. 
+
         <pre>
             <code>let touch = touchEvent(component);
                 touch.press(0,component);
@@ -77,21 +83,25 @@
         
             </code>
         </pre>
+        </p>
 <h3 class="qmlSubTitle">Mouse Events</h3>
-Unlike Touch Events, Mouse Events do not require defining anything. A mouse event can be pointed towards any QML component. 
+<p>
+Unlike Touch Events, Mouse Events do not require defining anything. A mouse event can be affect any QML component. 
 The simpiliest possible Mouse Event is a <a href="https://doc.qt.io/qt-5/qml-qttest-testcase.html#mouseClick-method">mouseClick</a>
 <pre>
     <code>
         mouseClick(component);
     </code>
 </pre>
+</p>
+<p>
 By default this will click on the component at its center, with the left mouse button. It has additional optional arguements to control x,y, button, modifies, and delays. In addition to mouseClick there is also mousePress, mouseRelease, mouseDrag, and mouseMove, and a couple others.
 I am going to focus mainly on mouseClick to keep things simple, with the rest following a similar enough pattern.
-
+</p>
 
 <h3 class="qmlSubTitle"> Example Tests:</h3>
-These two test sets show implementation of a touch test and a mouse test that test the pressed state, as well as a press and drag off of a touch and mouse.
-
+<p>These two test sets show implementation of a touch test and a mouse test that test the pressed state, as well as a press and drag off of a touch and mouse.
+</p>
                <h4>Component Code:</h4>
 <pre><code>import QtQuick 2.0
     import QtTest 1.2
@@ -182,8 +192,8 @@ Rectangle{
 </pre>
 
 <h3 class="qmlSubTitle" id="signalSpy"> Additional Notes: Signal Spy</h3>
-In additional to simply tying into components properties, or properties of children it is also possible (and potentially more useful) to tie into and listen for signals that your component emits
-based on actions. For example if you have a component that emits a clicked signal based on its internal state it would be possible to use a <a href=="">Signal Spy</a> to listen for that signal as part of your tests.
+In additional to simply directly comparing component properties, or properties of children it is also possible to tie into and listen for signals that your component emits
+based on actions. For example if you have a component that emits a clicked signal based on its internal state it would be possible to use a <a href="https://doc.qt.io/qt-5/qml-qttest-signalspy.html">Signal Spy</a> to listen for that signal as part of your tests.
 
 <pre>
     <code>
@@ -219,6 +229,6 @@ based on actions. For example if you have a component that emits a clicked signa
         </div>
     </main>
     <div id="footer"></div>
-</body>>A Simple Test<
+</body>
 
 </html>

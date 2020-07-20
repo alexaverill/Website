@@ -28,11 +28,12 @@
                     <a href="./index.html">&lt; QML Testing</a>
                 </div>
                 
-                <h2>Accessing Components Children.</h2>
-               While Unit Tests can be extremely helpful, In terms of the QML testing I have done testing individual QML components is pretty much a wasted effort. I have yet to run into a bug in the built in QML components (I may eventually, and will update this page when it happens).
-               Most of the testing I tend towards is combinations of multiple built in QML components to create a more complex custom component. Once a component is created that has a few sub components it can be helpful to use <code>findChild()</code> to access children elements from your base component.
-               <code>findChild()</code> does exactly what you expect and will search a component for a child based on an ObjectName that the programmer defines. ObjectNames can be assigned to any QML component in a similar way to any other properties, and are always a string value.
-               
+                <h2 class="qmlSubTitle" >Accessing Components Children.</h2>
+                <p>It is often extremenly useful to test components that are comprised of multiple children to achieve the desired functionality. This can be accomplished by using  <code>findChild()</code> to access a components children based on an ObjectName.</p>
+                <p>
+                ObjectNames are a string value that can be added to any component, and must be unique to each object. <code>findChild()</code> will recursively search a component for the object name that it is given.
+               </p>
+
                <h3 class="qmlSubTitle"> Example:</h3>
                <h4>Component Code:</h4>
 <pre><code>import QtQuick 2.0
