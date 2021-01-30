@@ -211,6 +211,22 @@ canvas{
     justify-content: center;
   }
 }
+@media(max-width:800px){
+  .row{
+    flex-direction: column;
+  }
+  .custom-card{
+    max-width: 100%;
+  }
+}
+@media(min-height:1100px){
+  body{
+    color:red;
+  }
+  .card{
+    max-height: 35vh;
+  }
+}
 /* #mainCanvas{
   width: 100%;
 } */
