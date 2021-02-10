@@ -220,9 +220,6 @@ canvas{
   }
 }
 @media(min-height:1100px){
-  body{
-    color:red;
-  }
   .card{
     max-height: 35vh;
   }
