@@ -28,8 +28,17 @@ a{
   text-align: center;
 }
 .bg-blue{
-	background-color:#0c4175;
-	color: #fff;
+	background-color:#fff;
+	color: black;
+}
+.bg-blue > a{
+  color:black;
+}
+.navbar-dark .navbar-brand {
+  color: black;
+}
+.navbar-dark .navbar-brand:hover {
+  color: black;
 }
 .btn-primary{
   background-color:#0c4175;
