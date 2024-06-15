@@ -27,7 +27,7 @@ body {
     font-size: 1.25rem;
   }
   a:hover {
-    color: blue;
+    color: rgb(77, 74, 93);
   }
   .homeLink {
     font-weight: bold;
@@ -46,6 +46,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-bottom: 2rem;
 }
 .postColumn {
   header {
@@ -124,4 +125,5 @@ main {
 .title {
   font-weight: bold;
   font-size: 2rem;
+  padding-bottom: 2rem;
 }
