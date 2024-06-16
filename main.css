@@ -116,6 +116,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  .title {
+    padding-bottom: 1rem;
+  }
 }
 .projects {
   display: flex;
@@ -125,5 +128,9 @@ main {
 .title {
   font-weight: bold;
   font-size: 2rem;
-  padding-bottom: 2rem;
+}
+.project-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
