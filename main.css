@@ -67,14 +67,22 @@ main {
     gap: 0.25rem;
     text-decoration: none;
     color: black;
-    .title {
-      font-size: 1.25rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .date {
+      font-size: 0.9rem;
     }
     .subtitle {
     }
 
     &:hover {
-      background-color: red;
+      background-color: rgb(162, 154, 194);
+      border: 1px solid black;
+
       cursor: pointer;
     }
   }
