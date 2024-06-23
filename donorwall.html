@@ -1,74 +1,42 @@
-<!doctype html>
 <html lang="en">
 
 <head>
     <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-        <a class="navbar-brand" href="/">Alex Averill</a>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="projects.html">Projects</a>
+
+        </div>
     </nav>
+    <main>
+        <section class="post">
+            <image-carousel>
+                <figure>
+                    <img src="./images/donorwall/DonorWall.jpg" />
+                    <figcaption>
+                        <p>A animated LED backlit donor wall.</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/donorwall/donorwall_names.jpg" />
+                    <figcaption>
+                        <p>Donor Installation with some names</p>
+                    </figcaption>
+                </figure>
+            </image-carousel>
+            <h1 tabindex="0">Penguins Donor Wall</h1>
+            <p tabindex="0"> The Penquin Chill exhibit at the Albuquerque Biopark wanted to honor their donors with an
+                animated LED installation that highlighted each donor who made the exhibit possible.</p>
 
-    <main role="main" class="container-fluid">
-
-        <div class="container-fluid">
-            <div class="article">
-                <div class="small-breadcrumb">
-                    <a href="./" >&lt; Home</a>
-                </div>
-                <h1>Penguins Donor Wall</h1>
-                <hr>
-                <img src="./images/donorwall/DonorWall.jpg" alt="Penguins Donor Wall" class="articleImage">
-                <div class="typeOfWork">
-                    <h3>Type of Work</h3>
-                    <ul>
-                        <li>Software Development</li>
-                        <li>Microcontroller Integration</li>
-                        <li>LEDs </li>
-                    </ul>
-                </div>
-                <div class="articleContent">
-                    <p>The Penguins donor wall was a project that was done at <a href="https://ideum.com/" rel="noreferrer" target="_blank">Ideum</a> for
-                        the <a href="https://ideum.com/portfolio/penguin-chill" rel="noreferrer" target="_blank">Albuquerque Biopark Penguin Chill</a>
-                        Exhibit. For more information on the entire exhibit check out <a
-                            href="https://ideum.com/portfolio/penguin-chill" rel="noreferrer" target="_blank">Ideum&#39;s Portfolio Piece</a>. This is
-                        part of a few exhibits that I worked on for the exhibit. </p>
-                    <p>The Donor Wall, as the name implies, is part of the installation to honor the many donors that
-                        made the entire exhibit possible. It consists of approximetly 50 different sized acrylic
-                        penguins that are back lite and each displays a different donor&#39;s name. The backlighting is
-                        a constant gentle undulation meant to emulate an ocean wave. </p>
-                    <p>The lighting for this installation consists of approximetly 200 LED&#39;s that are controlled by
-                        a single Arduino to provide the undulating effect. The underlying LED&#39;s&#39; are actualy
-                        kept in a single strip that wraps its way around the entire donor wall. This single strip of
-                        LEDs was then mapped into rows that corresponded to each row of penguins. To create the
-                        undulating effect the position of each led was animated over time with a sine wave that created
-                        a smooth and appealing animation. </p>
-
-                    <img src="./images/donorwall/donorwall_names.jpg" alt="Penguins Donor Wall With Names"
-                        class="articleImage">
-                </div>
-            </div>
+        </section>
     </main><!-- /.container -->
-    <div id="footer"></div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
 </body>
 
 </html>

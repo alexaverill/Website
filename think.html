@@ -1,52 +1,44 @@
-<!doctype html>
 <html lang="en">
-  <head>
-    <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-      <a class="navbar-brand" href="/">Alex Averill</a>
+<head>
+  <title>Alex Averill</title>
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <a class="navLink homeLink" href="index.html">Alex Averill</a>
+    <div class="navLinks">
+      <a class="navLink" href="projects.html">Projects</a>
+
+    </div>
   </nav>
+  <main>
+    <section class="post">
+      <image-carousel>
+        <figure>
+          <img src="./images/think/thinkMaster.jpg" />
+          <figcaption>
+            <p>Think! Installed in a library</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="./images/think/think.jpg" />
+          <figcaption>
+            <p>A close up of the different options.</p>
+          </figcaption>
+        </figure>
+      </image-carousel>
+      <h1 tabindex="0">Think!</h1>
+      <p>Think! was a Computer Science-based exhibit that was designed as an introduction into computer logic using
+        combination logic. It runs on a Arduino
+        Mega board that uses LED buttons and lights to display which sentences correspond to different combinations of
+        buttons.</p>
 
-    <main role="main" class="container-fluid">
+    </section>
+  </main><!-- /.container -->
+  <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
+</body>
 
-      <div class="container-fluid">
-        <div class="article">
-          <div class="small-breadcrumb">
-            <a href="./" >&lt; Home</a>
-        </div>
-        <h1>Think!</h1>
-        <div class="centered"> <img src="./images/think/thinkMaster.jpg"/></div>
-         <p>Think! was one of the first completely Computer Science-based exhibits that was offered to our library partners. It is designed as an introduction into computer logic using combination logic. It runs on a Arduino Mega board that uses LED buttons and lights to display which sentences correspond to different combinations of buttons.</p>
-        <p> It was laser-engraved white acrylic that was then painted to create contrast. 
-          The buttons were originally fitted with 12V incandescent bulbs that I converted to 5V LED bulbs to allow for much 
-          easier control by the Arduino Mega.</p>
-              <hr>
-              <div class="row">
-         <div class="col"> <img src="./images/think/think.jpg"/></div>
-         <div class="col">
-         <p> Think! after painting and button installation.</p>
-        </div>
-        </div>
-        <hr>
-        <div class="row">
-         <div class="col"> <img src="./images/think/IMG_20170920_115509.jpg"/></div>
-         <div class="col">
-         <p>Think! out in the public.</p>
-        </div>
-        </div>
-
-        </div>
-  </div>
-
-    </main><!-- /.container -->
-    <div id="footer"></div>
-  </body>
 </html>

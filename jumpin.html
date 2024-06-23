@@ -1,61 +1,37 @@
-<!doctype html>
 <html lang="en">
 
 <head>
     <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="projects.html">Projects</a>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-        <a class="navbar-brand" href="/">Alex Averill</a>
-    </nav>
-
-    <main role="main" class="container-fluid">
-
-        <div class="container-fluid">
-            
-            <div class="article">
-                <div class="small-breadcrumb">
-                    <a href="./" >&lt; Home</a>
-                </div>
-                <h1>Jump In</h1>
-                <hr>
-                <img class="jumpInImage" src="images/JumpIn/BothScreens.png" alt="Jump In Exhibit During Testing" width="auto" height="25%">
-                <div>
-                    <p>Jump In is an exciting exhibit that was designed and build for Caytons Childrens Museum in Santa
-                        Monica California.
-                        This exhibit allows children to see how tall they are, and then explore the act of jumping. The visitor approaches two massive 86 inch stretch 
-                        monitors that are built into a wall.</p>
-                        <p> Once they step into a circle on the floor the screen will transition to a real time measure of their height on the screen, as well as a live video of themselves.
-                        </p>
-                        <p>After a few seconds will lock in place. Once it locks in place the screen will transition to instructions that 
-                        the visitor will need to prepare to jump.</p>
-                        <p>Next the screen will begin a 3 second countdown, prompt the visitor to jump, and capture a slow motion video of the visitors jump. 
-
-                    </p>
-                    <p> Finally the exhibit will transition into a summary screen that plays the visitor their slow motion video and shows how high they jumped compared to their height.</p>
-                    <img class="jumpInImage" src="images/JumpIn/MainScreens.png" alt="Both attract screens of Jump In during testing with sensors hung"/>
-                    <h2>How it works</h2>
-                    <hr/>
-                    <p> This exhbit is based around two ultrasonic sensors that are placed directly above each visitor station.
-                         These sensors are used to control they entire experiance, they trigger the initial transition from the exhibits attract mode into the jump sequence, and handle visitors leaving during the experiance. 
-                    </p><p>The sensors are accurate down to about 24 inches from the floor allowing any visitor that is old enough to walk to be able to engage with the exhibit. Additionally visitors with mobility issues 
-                    are still able to use the exhibit and can interact by raising an arm, or other appendage.</p>
-                
-
-                </div>
-            </div>
         </div>
+    </nav>
+    <main>
+        <section class="post">
+            <image-carousel>
+                <figure>
+                    <img src="images/JumpIn/BothScreens.png" />
+                    <figcaption>
+                        <p>A two station Jumping exhibit for a Cayton Childrens Museum</p>
+                    </figcaption>
+                </figure>
+            </image-carousel>
+            <h1 tabindex="0">Jump In!</h1>
+            <p tabindex="0"> Jump In is a fun interactive for Cayton Childrens museum which allowed visitors to try to
+                jump as high as possible and compare their height to how high they could jump, as well as watch a slow
+                motion video of their jump.</p>
+
+        </section>
     </main><!-- /.container -->
-    <div id="footer"></div>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
 </body>
 
 </html>

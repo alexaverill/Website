@@ -1,48 +1,57 @@
-<!doctype html>
 <html lang="en">
-  <head>
-    <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet"> 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
-  </head>
-  <body>
-   
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-      <a class="navbar-brand" href="/">Alex Averill</a>
-  </nav>
 
-    <main role="main" class="container-fluid">
+<head>
+  <title>Alex Averill</title>
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-      <div class="container-fluid">
-          <div class="article">
-            <div class="small-breadcrumb">
-              <a href="./" >&lt; Home</a>
-          </div>
-        <h1>Raspberry Pi Kits</h1>
-        <div class="center"> <img src="./images/raspi/raspiMaster.jpg"/></div>
-         <p>These Raspberry Pi Kits are a computer science outreach kit designed to be lower cost and portable for use within schools, libraries, and afterschool programs. They were designed to reach an audience from upper elemetary to high school students. 
-         <p>The kits contain all the hardware needed for complete Raspberry Pi Computer setups. I also designed instructional guides for students to follow along with, allowing them to experience and experiment with different types of computer science.</p>
-         <div class="center"> <img src="./images/raspi/IMG_20170711_122146.jpg"/></div>
-         <p class="center"> Box of Pi!</p>
-         <h2>Instructional Guides</h2>
-         <ul>
-            <li><span class="piTitle">Getting Started with Raspberry Pi</span> - This is the starting point of all the activities. It walks students through setting up and getting started with the Raspberry Pi Computers.</li>
-            <li><span class="piTitle">Experiments with Programming</span> - Using a modified version of KanoOS, students can experiment with graphical programming, using linux commands, and controlling programs through the command line.</li> 
-            <li><span class="piTitle">Wired Wearables </span>- Using the SEEC Arduino Lilypad and an Arduino Lilypad, students can practice programming with wearable electronics in a non-intimidating way.</li> 
-            <li><span class="piTitle">Getting Started with Sense Hat</span> - Using the Raspberry Pi Sense Hat, students will learn to create a basic game using the LED grid and also learn to read a multitude of sensors. </li>   
-        </ul>
-        <h4> More information regarding a bill of materials and digital copies of the instructional guides will be uploaded shortly.</h4>
-         
+<body>
+  <nav class="navbar">
+    <a class="navLink homeLink" href="index.html">Alex Averill</a>
+    <div class="navLinks">
+      <a class="navLink" href="projects.html">Projects</a>
+
     </div>
-         
-  </div>
+  </nav>
+  <main>
+    <section class="post">
+      <image-carousel>
+        <figure>
+          <img src="./images/raspi/raspiMaster.jpg" />
+          <figcaption>
+            <p>A Raspberry Pi with a Sense Hat</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="./images/raspi/IMG_20170711_122146.jpg" />
+          <figcaption>
+            <p>A 3 Kit Setup in a Box</p>
+          </figcaption>
+        </figure>
+      </image-carousel>
+      <h1 tabindex="0">Raspberry Pi Kits</h1>
+      <p>These Raspberry Pi Kits are a computer science outreach kit designed to be lower cost and portable for use
+        within schools, libraries, and afterschool programs. They were designed to reach an audience from upper
+        elemetary to high school students.
+      <p>The kits contain all the hardware needed for complete Raspberry Pi Computer setups. I also designed
+        instructional guides for students to follow along with, allowing them to experience and experiment with
+        different types of computer science.</p>
+      <ul>
+        <li><span class="piTitle">Getting Started with Raspberry Pi</span> - This is the starting point of all the
+          activities. It walks students through setting up and getting started with the Raspberry Pi Computers.</li>
+        <li><span class="piTitle">Experiments with Programming</span> - Using a modified version of KanoOS, students
+          can experiment with graphical programming, using linux commands, and controlling programs through the
+          command line.</li>
+        <li><span class="piTitle">Wired Wearables </span>- Using the SEEC Arduino Lilypad and an Arduino Lilypad,
+          students can practice programming with wearable electronics in a non-intimidating way.</li>
+        <li><span class="piTitle">Getting Started with Sense Hat</span> - Using the Raspberry Pi Sense Hat, students
+          will learn to create a basic game using the LED grid and also learn to read a multitude of sensors. </li>
+      </ul>
 
-    </main><!-- /.container -->
-    <div id="footer"></div>
-  </body>
+    </section>
+  </main><!-- /.container -->
+  <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
+</body>
+
 </html>
