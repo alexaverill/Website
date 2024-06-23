@@ -1,49 +1,40 @@
-<!doctype html>
 <html lang="en">
 
 <head>
     <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="projects.html">Projects</a>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-        <a class="navbar-brand" href="/">Alex Averill</a>
+        </div>
     </nav>
-
-    <main role="main" class="container-fluid">
-
-        <div class="container-fluid">
-            <div class="article">
-                <div class="small-breadcrumb">
-                    <a href="./" >&lt; Home</a>
-                </div>
-                <h1>A Pair of Side Tables.</h1>
-                <hr>
-                <p><img src="./images/sidetable/sideTableHero.jpg" alt="Side Tables"  class="articleImage"></p>
-                <p>After recently moving from a small apartment, into a house, it was time to make the lowely love seat
-                    a bit nicer to sit at. My biggest issue with the loveseat was other then the floor there wasn&#39;t
-                    really a place to set a drink or a snack. So over the course of a few weeks I remidied that by
-                    creating a pair of matching Arts and Crafts style side tables. I ended up following a set of plans I
-                    found in my local library. They appear to be the same as the set that are found at <a
-                        href="http://woodarchivist.com/636-art-crafts-style-side-table-plans/">Wood Archivist Arts and
-                        Crafts Side Table</a>. Both side tables are built out of Red Oak, finished with a few coats of
-                    shellac, and some furniture wax. </p>
-                <p><img src="./images/sidetable/sideTableDetail.jpg" alt="Detail View"  class="articleImage"></p>
-                <h3>Lessons Learned</h3>
-                <p>I ran into some challenges with the through tenons for the shelf and the through holes with for the
-                    wedges. The largest issue being keeping my chisels sharp enough to cut cleanly, and being careful to
-                    avoid tearout when doing the initial through cuts.</p>
-            </div>
+    <main>
+        <section class="post">
+            <image-carousel>
+                <figure>
+                    <img src="./images/sidetable/sideTableHero.jpg" />
+                    <figcaption>
+                        <p>A matching pair of shaker side tables</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/sidetable/sideTableDetail.jpg" />
+                    <figcaption>
+                        <p>Another view of the side tables</p>
+                    </figcaption>
+                </figure>
+            </image-carousel>
+            <h1 tabindex="0">Shaker Side Tables</h1>
+            <p tabindex="0"> A pair of simple shaker side tables made in 2019</p>
+        </section>
     </main><!-- /.container -->
-    <div id="footer"></div>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
 </body>
 
 </html>

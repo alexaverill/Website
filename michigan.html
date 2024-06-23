@@ -1,89 +1,52 @@
-<!doctype html>
 <html lang="en">
 
 <head>
     <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="projects.html">Projects</a>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-        <a class="navbar-brand" href="/">Alex Averill</a>
-    </nav>
-    <main role="main" class="container-fluid">
-
-        <div class="container-fluid">
-            <div class="article">
-                <div class="small-breadcrumb">
-                    <a href="./" >&lt; Home</a>
-                </div>
-                <h1>Michigan Naturalist Table</h1>
-                <hr>
-                <img src="./images/michigan/michigan1.jpg" alt="Michigan Naturalist Table" class="articleImage" />
-                <div>
-                    <h3>Type of Work:</h3>
-                    <ul>
-                        <li>Software Development</li>
-                        <li>Interaction Design</li>
-                        <li>RFID Integration</li>
-                    </ul>
-                </div>
-                <div>
-                    <p>The Michigan Naturalist Table is an exhibit for the brand new <a
-                            href="https://lsa.umich.edu/ummnh" rel="noreferrer" target="_blank">University of Michican Natural History musuem</a>. This
-                        was developed at <a href="https://ideum.com/" rel="noreferrer" target="_blank">Ideum</a> - for more specific information check
-                        out the description on <a href="https://ideum.com/portfolio/rfid-table" rel="noreferrer" target="_blank">their portfolio</a>. The
-                        main goal of this exhibit was to allow visitors to view details about the museum&#39;s
-                        collection easily and with a touch of magic. </p>
-                    <p>The exhibit consists of 20 different specimens and one specimen viewing station. Visitors will
-                        select a specimen that they are interested in and take it to the speciment viewing station. Once
-                        a specimen is placed on the viewing station, that specimen&#39;s information will appear on the
-                        screen. The viewing station contains information about each specimen, questions to help visitors
-                        investigate the specimen they chose, and unique and engaging media pieces. </p>
-                    <img src="./images/michigan//michigan2.jpg" alt="Michigan Naturalist Table" class="articleImage" />
-                    <h2>How it works?</h2>
-                    <hr>
-                    <p>One of the goals of the Michigan Natural History museum was for this experience to be
-                        &quot;magical&quot; and not require much user input. Each specimen in the collection has an
-                        RFID-embedded tag. Inside the custom exhibit cabinetry, there is an RFID reader that will read
-                        the RFID tag as the specimen is placed on the shelf. </p>
-                    <p>We were able to achieve approximately 18-24 inches of read distance above the shelf at full RFID
-                        reader power, and ended up aiming for 3 inches above the shelf as the optimal read distance.</p>
-                    <p>We did discover an interesting issue during taping of the exhibit. If the plastic piece of the
-                        shelf was rubbed vigorously (such as wiping off smudges or finger prints), it would cause the
-                        RFID reader to stop functioning. What I discovered was that as the plastic was being rubbed, it
-                        would start to build up a static charge. Once that reached its peak, it would jump the small gap
-                        between the plastic and the RFID reader and cause the USB protection to trigger. This caused the
-                        RFID reader to stop functioning. Luckily, I remedied this by simply grounding the RFID&#39;s
-                        mounting screws into the computer&#39;s power supply. </p>
-                    <img src="./images/michigan//michigan3.jpg" alt="Michigan Naturalist Table" class="articleImage" />
-                    <h2>Accessiblity</h2>
-                    <hr>
-                    <p>One concern for this exhibit was to make it as accessible as possible. My team and I designed an
-                        accessbility shortcut layer that allowed a visitor to view a specimen without necessarily having
-                        to select it off of the shelves. If a visitor holds three fingers down on the screen, it will
-                        activate a list view of the different specimens available for viewing. Additionally,
-                        instructions on how to access this view is included in the information that appears in the about
-                        window. </p>
-                    <h2 id="managing-content">Managing Content</h2>
-                    <hr>
-                    <p>Due to the amount of information on each specimen, as well as the high likelihood of specimens
-                        being swapped out, removed, or added, I developed a Content Managment System (CMS). This CMS
-                        allowed for the addition, removal, and updating of specimens and their related information. This
-                        allows the curators and musuem staff to keep the exhibit up-to-date in an easy and user-friendly
-                        manner. </p>
-                </div>
-            </div>
         </div>
+    </nav>
+    <main>
+        <section class="post">
+            <image-carousel>
+                <figure>
+                    <img src="./images/michigan/michigan1.jpg" />
+                    <figcaption>
+                        <p>The full exhibit with in its custom enclosure.</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/michigan//michigan2.jpg" />
+                    <figcaption>
+                        <p>Visitors were prompted to explore specific parts of each specimen.</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/michigan//michigan3.jpg" />
+                    <figcaption>
+                        <p>Each specimen coul dhave up to 8 different sections of content for a visitor to explore.
+                        </p>
+                    </figcaption>
+                </figure>
+            </image-carousel>
+            <h1 tabindex="0">Michigan Naturalist Table</h1>
+            <p tabindex="0"> This is an RFID driven specimen viewer. Visitors can select from a variety of different
+                physical specimens, place them on the exhibit and explore information, photos and videos related to that
+                specimen.</p>
+            <p>A full portfolio video can be found on <a href="https://ideum.com/portfolio/rfid-table"
+                    target="_blank">Ideums Website</a></p>
+
+        </section>
     </main><!-- /.container -->
-    <div id="footer"></div>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
 </body>
 
 </html>
