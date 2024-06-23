@@ -1,270 +1,64 @@
-<!doctype html>
 <html lang="en">
 
 <head>
-  <title>Alex Averill</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
-  <link href="constellations.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="local.css">
-  <script type="text/javascript" src="constellations.js"></script>
+    <title>Alex Averill</title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<!-- <body onload="initialize(30,70,2,false)"> -->
+<body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="projects.html">Projects</a>
 
-<body onLoad="initialize(25, 50, .18,.18);">
-  <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-    <a class="navbar-brand" href="index.html">Alex Averill</a>
-  </nav>
+        </div>
+    </nav>
+    <main>
+        <p class="tagline">I am a software developer who specializes in interactive exhibit software for Museums and Non
+            Profits. I also dabble in woodworking and gardening.</p>
+        <section class="project-highlights">
+            <header class="title">Highlighted Projects</header>
+            <section class="projects">
+                <a href="./turtle_bay.html" target="_blank" class="articleLink">
+                    <article class="project-article">
+                        <figure><img src="./images/turtlebay/map_layers.png" alt="A look at an interactive map" />
+                        </figure>
+                        <header>Turtle Bay</header>
+                        <p>Explore the city of Redding CA.</p>
+                    </article>
+                </a>
+                <a href="./dodecahedron.html" target="_blank" class="articleLink">
+                    <article class="project-article">
+                        <figure><img src="./images/dodec/dodec_card.png" alt="A wooden dodecahedron" />
+                        </figure>
+                        <header>Dodecahedron!</header>
+                        <p>A handcrafted gift</p>
+                    </article>
+                </a>
+                <a href="https://ideum.com/portfolio/interactive-iot-model-planes" target="_blank" class="articleLink">
+                    <article class="project-article">
+                        <figure><img src="./images/planes/plane_card_alt.png"
+                                alt="An image of a model plane and diorama" />
+                        </figure>
+                        <header>Dynamics of Flight</header>
+                        <p>Learn about how planes fly</p>
+                    </article>
+                </a>
+            </section>
+            <a href="./projects.html">View All >></a>
+        </section>
+        <section class="postColumn">
+            <header class="title">Recent Posts</header>
+            <a href="/posts/2024-gardening.html" class="postSummary">
+                <p class="post-title">2024 Gardening!</p>
+                <p class="date">June 2024</p>
+                <p class="subtitle">A look at this years attempts at gardening.</p>
+            </a>
+        </section>
 
-  <main role="main" class="container-fluid">
+    </main>
 
-    <!--About -->
-    <div class="starter-template">
-      <h1>Alex Averill</h1>
-      <p class="lead">I am a Software Developer specializing in interactive exhibits for museums, and non-profits. Check
-        out my <a href="https://github.com/alexaverill" rel="noreferrer" target="_blank">github</a>.</p>
-      <p class="lead">In my spare time I
-        like to spend time woodworking and exploring different
-        projects and technologies.</p>
-    </div>
-
-    <!--Projects-->
-    <div id="project_list" class="container-fluid">
-      <h2>Projects</h2>
-      <div class="row">
-        <a href="https://ideum.com/portfolio/interactive-iot-model-planes" target="_blank" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/planes/plane_card_alt.png" alt="Multiple Interactive planes">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Dynamics of Flight</h4>
-                <p class="project-text">Interactive model planes to teach the dynamics of flight</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="turtlebay.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/turtlebay/neighborhood_intro.png"
-                  alt="Turtle bay intro to neighborhood screen">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Turtle Bay Utilites</h4>
-                <p class="project-text">Exploring Redding's utilties at Turtle Bay Exploration Park</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="michigan.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/michigan/michigan_card.png"
-                  alt="Michigan Naturalist Table in a room">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Michigan Naturalist Table</h4>
-                <p class="project-text">Learn about the University of Michigan Natural History Musueums expansive
-                  collection!</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="icecore.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/icecore/icecore_card.png" alt="Ice Core Exhibit">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Explore an Ice Core</h4>
-                <p class="project-text">Explore an ice core to determine how scientists can study weather!</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="jumpin.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/JumpIn/jumpin_card.png" alt="Jump In Exhibit">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Jump In</h4>
-                <p class="project-text">Interactive jumping at its funnest</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="qxp.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/qxp/qxp_card.png" alt="QXP Exhibit">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Qualcomm XPrize Exhibit</h4>
-                <p class="project-text">Discover the possible future of Healthcare through this interactive exhibit</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="svggenerator.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/svggenerator/svg_card..png"
-                  alt="SVG Path Generator screenshot">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">SVG Path Generator</h4>
-                <p class="project-text">A simple tool to create bezier paths for the SVG element</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="constellations.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <canvas id="mainCanvas" width="100px" height="200px"></canvas>
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Constellations Animation</h4>
-                <p class="project-text">A fun canvas animation in Typescript!</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="donorwall.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/donorwall/donor_card.png" alt="Donor Wall">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Penguins Donor Wall</h4>
-                <p class="project-text">The penguins donor wall was an installation at the Albuquerque Biopark's penguin
-                  exhibit</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="sidetable.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/sidetable/sidetable_card.png" alt="Sidetable card image">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Side Tables</h4>
-                <p class="project-text">A set of simple side tables that I made for my living room.</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="https://github.com/alexaverill/seecLilypadIDE" target="_blank" rel="noreferrer"
-          class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/lilypad_card.png" alt="project image cap">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">SEEC - Arduino Lilypad</h4>
-                <p class="project-text">The SEEC Arduino Lilypad is a language and code editor for the Lilypad
-                  Development board.</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="dodecahedron.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/dodec/dodec_card.png" alt="Wooden Dodecahedron">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Wooden Dodecahedron</h4>
-                <p class="project-text">An experiment in geometric woodworkin to create a 12
-                  sided polygon as a gift.</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="raspi.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/raspi/raspi_card.png" alt="Raspberry Pi">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Raspberry Pi Kits</h4>
-                <p class="project-text">Custom Educational kits
-                  to introduce students to computers and programming.</p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="ionosphere.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/iono/iono_card.png" alt="Ionosphere">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Ionosphere!</h4>
-                <p class="project-text">An interactive exhibit introducing students to the effect of the Ionosphere on
-                  radio transmissions. </p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="think.html" class="custom-card col-md-3">
-          <div class="card">
-            <div class="project">
-              <div class="image-container">
-                <img class="project-img-top" src="./images/think/think_card.png" alt="project image cap">
-              </div>
-              <div class="project-block">
-                <h4 class="project-title">Think!</h4>
-                <p class="project-text">Think is an exhibit bench designed to let young students experiment with
-                  computer logic and combinations.
-                </p>
-
-              </div>
-            </div>
-          </div>
-        </a>
-
-
-
-      </div>
-
-  </main>
 </body>
 
 </html>
