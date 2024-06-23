@@ -1,3 +1,9 @@
+:root {
+  --image-carousel-width: 75%;
+  @media (width >1900px) {
+    --image-carousel-width: 50%;
+  }
+}
 html,
 body,
 p {
@@ -73,6 +79,15 @@ main {
     }
   }
 }
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin-top: 0.5rem;
+  }
+}
 .articleLink {
   text-decoration: none;
   color: black;
@@ -133,4 +148,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+figcaption {
+  p {
+    padding: 1rem;
+  }
 }

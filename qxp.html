@@ -1,108 +1,49 @@
-<!doctype html>
 <html lang="en">
 
 <head>
     <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-        <a class="navbar-brand" href="/">Alex Averill</a>
-    </nav>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="projects.html">Projects</a>
 
-    <main role="main" class="container-fluid">
-
-        <div class="container-fluid">
-            <div class="article">
-                <div class="small-breadcrumb">
-                    <a href="./" >&lt; Home</a>
-                </div>
-                <h1 id="xprize-exhibit">XPrize Exhibit</h1>
-                <hr>
-                <p> <img src="./images/qxp/xprize_hero.jpg" alt="XPrize Exhibit" class="articleImage"></p>
-                <h3>Type of Work:</h3>
-                <ul>
-                    <li>Software Development</li>
-                    <li>User Testing</li>
-                    <li>Microcontroller Integration</li>
-                    <li>Sensors</li>
-                </ul>
-            
-            <div>
-                <p>The Qualcomm Future of Medicine Table was an exhbit that was developed at <a
-                        href="https://ideum.com/">Ideum</a> (<a
-                        href="https://ideum.com/portfolio/xprize-tricorder-museum-exhibit">Ideum Portfolio Piece</a>)in
-                    collaboration with the <a href="https://tricorder.xprize.org/prizes/tricorder">Qualcomm XPrize
-                        Foundation</a> to help expand the public&#39;s knowledge of the work of the Qualcomm XPrize
-                    foundation as well as their medical device challege that ended in 2017. This exhibit was deployed
-                    into four different science centers all across the United States. </p>
-                <p>This application consisted of three different programs that operated on the same table, a series of
-                    embedded health sensors that communicated with the application, and finally a set of LEDs embedded
-                    in the table frame to provide a futuristic look. The application was developed in Unity, along with
-                    an Arduino that interfaced with the different health sensors. </p>
-                <p>This was an extremely fun and rewarding exhibit to work on and was deployed to five different science
-                    centers across the nation. </p>
-                <ul>
-                    <li><a href="https://lsc.org/">Liberty Science Center</a></li>
-                    <li><a href="https://www.thetech.org/">The Tech</a></li>
-                    <li><a href="https://www.rhfleet.org/">Fleet Science Center</a></li>
-                    <li><a href="https://www.pacificsciencecenter.org/">Pacific Science Center</a></li>
-                    <li><a href="https://omsi.edu/">Oregon Musuem of Science and Industry</a></li>
-                </ul>
-
-                <img src="./images/qxp/xprize_final_sensor_panel.jpg" alt="Sensor Panel" class="articleImage">
-                <h2 id="sense-yourself">Sense Yourself</h2>
-                <hr>
-                <p>My main focus for this exhibit was the Sense Yourself portion. Sense Yourself consisted of three
-                    different health sensors displayed live statistics about the user&#39;s current health.</p>
-                <p>The three-finger activated sensors lived in a custom enclosure attached to an Ideum touch table. When
-                    a sensor was touched, it would activate a different view focusing on the relevant sensor. </p>
-                <p><strong>Heart Rate Sensor</strong> </p>
-                <p>On the far left of the panel, a heart rate sensor read and displayed the visitor&#39;s current heart
-                    rate. This ended up being the most difficult of the three sensors to integrate. The main challenge
-                    was the tradeoff between the speed and accuracy of the sensor - the longer a finger was placed on
-                    the sensor, the more accurate and reliable the output would be to the actual heartrate of a visitor.
-                    A truly accurate reading, at a worst case, could approach 20 seconds of read time, which for a
-                    musuem exhibit is a very long time. </p>
-                <p>In order to ensure accurate readings and avoid frustrated vistors, I implemented a couple different
-                    solutions. The first was a countdown to inform the visitor of the state of the scan so that they
-                    wouldn&#39;t assume it was broken. The second was a prompt to retry the scan if the readings at the
-                    end of the countdown were unreasonably high or low which would indicate a poor reading from the
-                    sensor (or a severe medical emergency).</p>
-                <p>Once a heart rate was read, the application would prompt the user to do some form of exercise to see
-                    if they could increase their heart rate.</p>
-                <p><strong>Galvonic Skin Response (Stress)</strong> </p>
-                <p>The middle sensor was a galvonic skin response sensor. It measures the amount of moisture on the skin
-                    and correlates that to the amount of stress a visitor is experiencing. This sensor was extremely
-                    easy to integrate, and it allowed us to graph the visitor&#39;s stress level over time. </p>
-                <p>Once a visitor places their finger onto this sensor, the application displays a running line graph
-                    displaying the users&#39; current stress level as read by the Galvonic Skin response. It then
-                    prompts the visitor to either attempt to calm down, or do something embarrassing to see how their
-                    stress level changed.</p>
-                <p><strong>Temperature Sensor</strong> </p>
-                <p>The rightmost sensor was a IR Temperature sensor that reads and displays the skin temperature of the
-                    visitor. This contactless temperature sensor was also extremely easy to integate into the aplication
-                    and provided a very accurate and repeatable skin temperature reading. </p>
-                <p>Once the skin temperature was displayed to the visitor, it would prompt them to rub thier hands
-                    together to see if they could increase their temperature, as well as an explaination as to the
-                    reasons the temperature may not have been what they were expecting. This additional explanation was
-                    added after user testing. Visitors were confused as to why the temperature they were seeing was not
-                    the usual 98.6 degrees. This disparity is due to the area that is being measured, the interal body
-                    temperature that everyone knows and is used to is 98.6 degrees, however average human skin
-                    temperature can vary drasticly based on individual and conditions. <a
-                        href="https://hypertextbook.com/facts/2001/AbantyFarzana.shtml">This is one of the interesting
-                        tables regarding human skin temperature</a>, which is reproduced below.</p>
-            </div>
         </div>
+    </nav>
+    <main>
+        <section class="post">
+            <image-carousel>
+                <figure>
+                    <img src="./images/qxp/xprize_hero.jpg" />
+                    <figcaption>
+                        <p>A four station future of health exhibit.</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/qxp/xprize_final_sensor_panel.jpg" />
+                    <figcaption>
+                        <p>A close up of the three different health related sensors</p>
+                    </figcaption>
+                </figure>
+            </image-carousel>
+            <h1 tabindex="0">Qualcomm X-Prize Exhibit</h1>
+            <p tabindex="0"> This was a four person, three station multi-user interactive funded by Qualcomm aimed to
+                educate and inspire about the future of medicine. </p>
+            <p>It consisted of a station to optimize a medical scanning device for specific scenarios, a challenge
+                between two visitors to diagnose a patient and a station where visistors could scan their own
+                temperature, galvonic skin response, and get a heart rate reading.</p>
+            <p>This exhibit was five tables spread across five different science centers across the United States.</p>
+            <p>A full portfolio video can be found on <a
+                    href="https://ideum.com/portfolio/xprize-tricorder-museum-exhibit" target="_blank">Ideums
+                    Website</a></p>
+
+        </section>
     </main><!-- /.container -->
-    <div id="footer"></div>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
 </body>
 
 </html>

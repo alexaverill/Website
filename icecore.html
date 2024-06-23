@@ -1,62 +1,43 @@
-<!doctype html>
 <html lang="en">
 
 <head>
     <title>Alex Averill</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="local.css">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="projects.html">Projects</a>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
-        <a class="navbar-brand" href="/">Alex Averill</a>
+        </div>
     </nav>
+    <main>
+        <section class="post">
+            <image-carousel>
+                <figure>
+                    <img src="./images/icecore/icecorefull.jpg" />
+                    <figcaption>
+                        <p>Explore an Ice Core!</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/icecore/icecorescreen.jpg" />
+                    <figcaption>
+                        <p>A close up of the screen and "scanner"</p>
+                    </figcaption>
+                </figure>
+            </image-carousel>
+            <h1 tabindex="0">Explore and Ice Core!</h1>
+            <p tabindex="0"> Visitors to the Penguins Chill exhibit at the Albuquerque Biopark could use a scanner to
+                explore an ice core and learn about how they can allow scientists to step back in time and learn more
+                about our climate and how it has changed</p>
 
-    <main role="main" class="container-fluid">
+        </section>
+    </main><!-- /.container -->
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
+</body>
 
-        <div class="container-fluid">
-            <div class="article">
-                <div class="small-breadcrumb">
-                    <a href="./" >&lt; Home</a>
-                </div>
-                <h1>Ice Core</h1>
-                <hr>
-                <img src="./images/icecore/icecorefull.jpg" alt="Ice Core Exhibit" class="articleImage" />
-                <div class="typeOfWork">
-                    <h3 id="type-of-work">Type of Work</h3>
-                    <ul>
-                    <li>Software Development</li>
-                    <li>Microcontroller Integration</li>
-                    <li>LEDs  </li>
-                    </ul>
-                </div>
-                <div class="articleContent">
-                <p>I collaborated with a few other developers to help finish the Ice Core Exhibit for the Albuquerque Biopark Penguins Chill exhibit during my time at Ideum. An <a href="http://www.antarcticglaciers.org/glaciers-and-climate/ice-cores/ice-core-basics/" target="_blank">Ice Core</a> is a large cylinder of ice that scientists usually drill out of a glacier. It is essentially a time capsule that can go back for hundreds of years This exhibit consisted of a faux ice core, as well as a handheld &quot;scanner&quot; to allow visitors to explore how an Ice Core can hold information that is important to scientists. They would use the scanner to &quot;scan&quot; the ice core to see what information it would provide, as well as the time period that each interest point was from. </p>
-                <p>Most of my work on this exhibit revolved around integrating a <a href="https://en.wikipedia.org/wiki/Linear_encoder" rel="noreferrer" target="_blank">linear encoder</a> - which is a sensor that allows you to determine the distance that the sensor has moved - into the Unity application was displayed on the sceen.  The linear encoder was an absolute linear encoder in order to ensure that we maintained position during power off periods. The position of the linear encoder was read by an arduino that was then passing information back to the Unity Application. </p>
-                <p>In addition to the integration of the linear encoder I also spent some time working on the User Interface and testing of this application. </p>
-                
-                <img src="./images/icecore/icecorescreen.jpg" alt="Ice Core Screen" class="articleImage" />
-            </div>
-            </div>
-        </main><!-- /.container -->
-        <div id="footer"></div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-            crossorigin="anonymous"></script>
-    </body>
-    
-    </html>
+</html>
