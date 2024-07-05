@@ -1,9 +1,11 @@
 :root {
   --image-carousel-width: 75%;
+
   @media (width >1900px) {
     --image-carousel-width: 50%;
   }
 }
+
 html,
 body,
 p {
@@ -11,9 +13,11 @@ p {
   padding: 0;
   font-family: sans-serif;
 }
+
 body {
   background: rgb(207, 198, 245);
 }
+
 .navBar {
   display: flex;
   flex-direction: row;
@@ -21,31 +25,37 @@ body {
   justify-content: space-between;
   padding: 3rem;
   align-content: center;
+
   .navLinks {
     display: flex;
     align-self: center;
     gap: 2rem;
     margin-right: 3rem;
   }
+
   a {
     color: black;
     text-underline-offset: 0.5rem;
     font-size: 1.25rem;
   }
+
   a:hover {
     color: rgb(77, 74, 93);
   }
+
   .homeLink {
     font-weight: bold;
 
     text-decoration: none;
     font-size: 2rem;
   }
+
   .selected {
     font-weight: bold;
     text-decoration-color: rgb(119, 7, 134);
   }
 }
+
 main {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -54,13 +64,16 @@ main {
   gap: 2rem;
   padding-bottom: 2rem;
 }
+
 .postColumn {
   header {
     font-size: 1.5rem;
   }
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
   .postSummary {
     display: flex;
     flex-direction: column;
@@ -69,15 +82,17 @@ main {
     color: black;
     padding: 1rem;
     border-radius: 1rem;
+
     .post-title {
       font-size: 1.5rem;
       font-weight: bold;
     }
+
     .date {
       font-size: 0.9rem;
     }
-    .subtitle {
-    }
+
+    .subtitle {}
 
     &:hover {
       background-color: rgb(162, 154, 194);
@@ -87,19 +102,35 @@ main {
     }
   }
 }
+
 .post {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   p {
     margin-top: 0.5rem;
   }
+
+  .particleCanvase {
+    min-height: 400px;
+  }
+
+  .article-image {
+    height: 300px;
+
+    img {
+      height: 100%;
+    }
+  }
 }
+
 .articleLink {
   text-decoration: none;
   color: black;
 }
+
 .project-article {
   background-color: white;
   border-radius: 0.5rem;
@@ -110,19 +141,23 @@ main {
   gap: 0.5rem;
   width: fit-content;
   max-width: 300px;
+
   header {
     font-size: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
   p {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0.75em;
   }
+
   figure {
     padding: 0;
     margin: 0;
+
     img {
       height: 100%;
       width: 100%;
@@ -135,28 +170,34 @@ main {
     }
   }
 }
+
 .project-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
   .title {
     padding-bottom: 1rem;
   }
 }
+
 .projects {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 .title {
   font-weight: bold;
   font-size: 2rem;
 }
+
 .project-highlights {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 figcaption {
   p {
     padding: 1rem;

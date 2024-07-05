@@ -1,0 +1,100 @@
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <link rel="stylesheet" href="../main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="../index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="../projects.html">Projects</a>
+
+        </div>
+    </nav>
+    <main>
+        <section class="post">
+            <image-carousel>
+                <figure>
+                    <img src="/images/recipe-app/home-page.WEBP" />
+                    <figcaption>
+                        <p>Recipe App Homepage that shows recent recipes and random recipes.</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/recipe-app/home-search.WEBP" />
+                    <figcaption>
+                        <p>The ability to filter and search for any recipe in the application.</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/recipe-app/recipe-view.WEBP" />
+                    <figcaption>
+                        <p>View a recipe (in some browser you can even stop the page from sleeping the display)</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/recipe-app/create-view.WEBP" />
+                    <figcaption>
+                        <p>Quickly create new recipes by adding ingredients and steps</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/recipe-app/icon-edit.WEBP" />
+                    <figcaption>
+                        <p>Customize the icon and its color.</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/recipe-app/collection-view.WEBP" />
+                    <figcaption>
+                        <p>View collections of recipes</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/recipe-app/recipe-list-view.WEBP" />
+                    <figcaption>
+                        <p>View a list of every recipe</p>
+                    </figcaption>
+                </figure>
+            </image-carousel>
+            <h1 tabindex="0">Family Recipe App</h1>
+            <p>We weren't totally satisfied by our paper recipe process (See the <a
+                    href="./2022-recipe-generator.html">Recipe Generator</a>), so decided that we should build something
+                a bit different. View the source on the <a href="https://github.com/alexaverill/FamilyRecipeApp">Family
+                    Recipe App Github</a></p>
+            <p> Our main issues we were having were:
+            <ul>
+                <li>It was hard to quickly edit, you had to write down your changes, then edit markdown, then reprint
+                    the recipe</li>
+                <li>It was hard to share, if you wanted to share a single recipe you had to either manually run the
+                    process for the single recipe, or print a single page from the generated PDF and then share.</li>
+                <li>It wasn't easy for anyone in our family to add their recipes, they would have to share it with us
+                    and then we would add it and send it back</li>
+            </ul>
+
+            </p>
+            <p> These problems led us to decide to build a basic web app that anyone in our families could log in to and
+                add or view recipes. It had a few main requirements:
+            <ul>
+                <li>It needed to be easy to create recipes</li>
+                <li>It needed to be easy to edit recipes</li>
+                <li>Recipes should be easy to find</li>
+                <li>It should be easy to create a variation of another persons recipe. </li>
+                <li>Nice to have: Keep the screen awake when viewing a recipe (This was added)</li>
+                <li>Nice to have: Scaling of ingredents (This was added)</li>
+                <li>Nice to have: Generate PDFs (This is still on the todo list)</li>
+            </ul>
+            </p>
+            <p>This ended up being a react app that lives in an S3 bucket on AWS and stores the recipes in DynamoDB.
+                Based on the number of users we have it costs about a dollar a month to host. On the client side we are
+                also caching the recipes which drastically reduces calls to AWS. At some point I want to do some more
+                work with making this setup more Local First, and also add in PDF generation.</p>
+        </section>
+    </main>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
+</body>
+
+</html>

@@ -5,9 +5,24 @@
 <link>https://averill.dev</link>
 <description>The personal website of Alex Averill.Covering topics ranging from museum exhibits, exhibit software, gardening, woodworking and other random things.</description>
 <item>
-<title>2024 Gardening</title>
-<link>https://averill.dev/posts/2024-gardening.html</link>
-<description>An overview of my garden plans for 2024</description>
+<title>Family Recipe App</title>
+<link>https://averill.dev/posts/2023-recipe-app.html</link>
+<description>A family focused recipe app.</description>
+</item>
+<item>
+<title>Family List App</title>
+<link>https://averill.dev/posts/2023-family-list-app.html</link>
+<description>A list app for family celebrations</description>
+</item>
+<item>
+<title>PDF Recipes from Markdown</title>
+<link>https://averill.dev/posts/2022-recipe-generator.html</link>
+<description>Create Recipe PDFs from Markdown</description>
+</item>
+<item>
+<title>Typescript Constellations</title>
+<link>https://averill.dev/posts/2020-constellations.html</link>
+<description>Creating a constellation stlye animation in Typescript</description>
 </item>
 </channel>
 </rss>

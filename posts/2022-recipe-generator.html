@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <link rel="stylesheet" href="../main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="../index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="../projects.html">Projects</a>
+
+        </div>
+    </nav>
+    <main>
+        <section class="post">
+            <h1 tabindex="0">Recipe Generator</h1>
+            <p>My partner and I had been having issues trying to keep track of our collection of recipes that we had
+                been building up from family members, cookbooks, and random internet sites.</p>
+            <p>We had tried using a couple of different apps, but had the problem that we wanted a paper version so we
+                could easily have it open in the kitchen, and mark it up as we iterated/improved the recipe. </p>
+            <p>Our main goals were to have something easy to edit and update, and have a quick process to create a new
+                paper version without much effort. We decided that our base recipes should be stored as markdown, which
+                solved the easily editable issue.</p>
+            <p> I then decided that we should just convert those markdown files to HTML (using MarkDig) and then used
+                Playwright to print them
+                to PDF. During the Playwright Print to PDF portion I injected custom styles that controlled the recipe
+                layout.</p>
+            <p>To create recipe PDFs you would put your markdown files into the markdown folder and then run docker
+                compose up and PDFs would be spit out into a PDFs folder.</p>
+            <p> View the code on the <a href="https://github.com/alexaverill/RecipeGenerator/tree/main">Recipe Generater
+                    Github</a></p>
+            <p> One downside was that we wanted to have some custom elements to make the printed recipe a bit more
+                elegant, so we had some non-standard markdown added that markdig would convert to divs. Sample Markdown:
+            <pre><code>
+                    :::::container
+                    ::::topbar
+                    ::::
+                    ::::main
+                    :::title{.gold-banner}
+                    # Alfredo Sauce
+                    :::
+                    :::ingredients
+                    ## Ingredients
+                    - 1/2 cup butter
+                    - 1 pint heavy whipping cream
+                    - 4 oz of cream cheese
+                    - 1/2 tsp of minced garlic
+                    - 1 cup of parmesan
+                    - Garlic powder
+                    - Italian seasoning
+                    - Flour (for thickening)
+                    :::
+                    :::recipe
+                    ## Recipe
+                    1. Add butter, cream, and cream cheese into a sauce pan and melt.
+                    2. Season to taste with garlic powder, italian seasoning, salt, and pepper.
+                    3. Add shredded cheese. Bring to a simmer and cook for 3-5 minutes, constantly stirring, until thick.
+                    4. Add flour for extra thickness if needed.
+                    :::
+                    ::::
+                    :::::
+                </code></pre>
+            <figure class="article-image">
+                <img src="/images/recipe-generator/alfredo-sample.png" />
+                <figcaption>The Recipe as it was rendered</figcaption>
+            </figure>
+            <a href="/images/recipe-generator/Alfredo Sauce.pdf">Sample PDF</a>
+            </p>
+
+        </section>
+    </main>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
+</body>
+
+</html>

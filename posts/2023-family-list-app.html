@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <title>Alex Averill</title>
+    <link rel="stylesheet" href="../main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navLink homeLink" href="../index.html">Alex Averill</a>
+        <div class="navLinks">
+            <a class="navLink" href="../projects.html">Projects</a>
+
+        </div>
+    </nav>
+    <main>
+        <section class="post">
+            <h1 tabindex="0">Family List App</h1>
+            <p>As a family for birthdays and Christmas we had used email chains as a way for people to provide
+                wishlists. This worked fine, but ended up being chaotic and hard to follow, so back in 2019 I created a
+                next.js app that allowed people to create a wishlist and other family members to claim items on those
+                wishlists.</p>
+            <p>This app worked great, but it was a bit thrown together and not the easiest to change, with the bigger
+                problem being it was a bit of a pain to deploy. It worked without issue for 3 or so years before I came
+                back to it and decided to swap over to a more serverless approach.</p>
+            <p>I had decided to go serverless because its has very sporadic usage, essentially its mostly used around
+                christmas, with a few people adding lists throughout the year for their birthdays. Previously I had it
+                running in a VPS which was a fixed cost every month, which meant it cost $60 a year.</p>
+            <p>It now runs on AWS using DynamoDB for data storage, and S3 for its hosting, and its costs are now around
+                $0.50 a month. (I am splitting the ~$1.00 bill I get from AWS that has both the List app and <a
+                    href="./2023-recipe-app.html">the recipe app</a>)</p>
+            <p>Its source sode can be found at the <a
+                    href="https://github.com/alexaverill/FamilyListAppServerless">Family
+                    List App Github</a> and is composed of a React App, NodeJS lambdas and a bunch of Terraform.</p>
+        </section>
+    </main>
+    <script src="https://alexaverill.github.io/web-components/image-carousel/image-carousel.js"></script>
+</body>
+
+</html>
