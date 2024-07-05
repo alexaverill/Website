@@ -18,6 +18,10 @@ body {
   background: rgb(207, 198, 245);
 }
 
+a:visited {
+  color: black
+}
+
 .navBar {
   display: flex;
   flex-direction: row;
@@ -108,9 +112,21 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2rem;
 
   p {
     margin-top: 0.5rem;
+    width: 60%;
+    line-height: 1.8rem;
+  }
+
+  ul {
+    width: 60%;
+
+    li {
+      padding-bottom: 1rem;
+      line-height: 1.8rem;
+    }
   }
 
   .particleCanvase {
