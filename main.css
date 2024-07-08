@@ -60,6 +60,18 @@ a:visited {
   }
 }
 
+.titleImage {
+  display: flex;
+  min-width: 20vw;
+
+  gap: .25rem;
+
+  img {
+    height: 100%;
+    max-width: 15%;
+  }
+}
+
 main {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -86,6 +98,7 @@ main {
     color: black;
     padding: 1rem;
     border-radius: 1rem;
+    border: 1px solid transparent;
 
     .post-title {
       font-size: 1.5rem;
