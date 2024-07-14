@@ -63,7 +63,7 @@ a:visited {
 .titleImage {
   display: flex;
   min-width: 20vw;
-
+  align-items: center;
   gap: .25rem;
 
   img {
