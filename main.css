@@ -4,6 +4,10 @@
   @media (width >1900px) {
     --image-carousel-width: 50%;
   }
+
+  @media (max-width: 800px) {
+    --image-carousel-width: 100%;
+  }
 }
 
 html,
